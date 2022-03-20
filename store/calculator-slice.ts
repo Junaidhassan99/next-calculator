@@ -1,7 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-export type ButtonKeyType = { id: string; text: string; isActive: boolean };
+export type ButtonKeyType = {
+  id: string;
+  text: string;
+  isActive: boolean;
+  isBigSize?: boolean;
+};
 
 // Define a type for the slice state
 type CalculatorState = {
@@ -14,14 +19,181 @@ const initialState: CalculatorState = {
   screenText: "0",
   buttonKeys: [
     {
-      id: "k-0",
-      text: "0",
+      id: "k-12",
+      text: "sin",
+      isActive: true,
+    },
+    {
+      id: "k-13",
+      text: "cos",
+      isActive: true,
+    },
+    {
+      id: "k-13",
+      text: "tan",
+      isActive: true,
+    },
+    {
+      id: "k-14",
+      text: "sec",
+      isActive: true,
+    },
+    {
+      id: "k-15",
+      text: "cosec",
+      isActive: true,
+    },
+    {
+      id: "k-16",
+      text: "cot",
+      isActive: true,
+    },
+    {
+      id: "k-32",
+      text: "inv(sin)",
+      isActive: true,
+    },
+    {
+      id: "k-33",
+      text: "inv(cos)",
+      isActive: true,
+    },
+    {
+      id: "k-34",
+      text: "inv(tan)",
+      isActive: true,
+    },
+    {
+      id: "k-35",
+      text: "inv(sec)",
+      isActive: true,
+    },
+    {
+      id: "k-36",
+      text: "inv(cosec)",
+      isActive: true,
+    },
+    {
+      id: "k-37",
+      text: "inv(cot)",
+      isActive: true,
+    },
+    {
+      id: "k-38",
+      text: "+",
+      isActive: true,
+    },
+    {
+      id: "k-39",
+      text: "-",
+      isActive: true,
+    },
+    {
+      id: "k-40",
+      text: "*",
+      isActive: true,
+    },
+    {
+      id: "k-41",
+      text: "/",
+      isActive: true,
+    },
+    {
+      id: "k-42",
+      text: "backspace",
+      isActive: true,
+    },
+    {
+      id: "k-43",
+      text: "CE",
+      isActive: true,
+    },
+    {
+      id: "k-44",
+      text: "C",
+      isActive: true,
+    },
+    {
+      id: "k-17",
+      text: "inv",
+      isActive: true,
+    },
+    {
+      id: "k-18",
+      text: "log",
+      isActive: true,
+    },
+    {
+      id: "k-19",
+      text: "ln",
+      isActive: true,
+    },
+    {
+      id: "k-20",
+      text: "10^x",
+      isActive: true,
+    },
+    {
+      id: "k-21",
+      text: "hyp",
+      isActive: true,
+    },
+    {
+      id: "k-22",
+      text: "^",
+      isActive: true,
+    },
+    {
+      id: "k-24",
+      text: "pi",
+      isActive: true,
+    },
+    {
+      id: "k-25",
+      text: "e",
+      isActive: true,
+    },
+    {
+      id: "k-30",
+      text: "e^x",
+      isActive: true,
+    },
+    {
+      id: "k-31",
+      text: "mod",
+      isActive: true,
+    },
+    {
+      id: "k-26",
+      text: "x^2",
+      isActive: true,
+    },
+    {
+      id: "k-28",
+      text: "x^3",
+      isActive: true,
+    },
+    {
+      id: "k-27",
+      text: "sqrt",
+      isActive: true,
+    },
+    {
+      id: "k-29",
+      text: "x!",
+      isActive: true,
+    },
+
+    {
+      id: "k-23",
+      text: "abs",
       isActive: true,
     },
     {
       id: "k-1",
       text: "1",
       isActive: true,
+      isBigSize: true,
     },
     {
       id: "k-2",
@@ -61,6 +233,22 @@ const initialState: CalculatorState = {
     {
       id: "k-9",
       text: "9",
+      isActive: true,
+    },
+    {
+      id: "k-10",
+      text: ".",
+      isActive: true,
+    },
+    {
+      id: "k-0",
+      text: "0",
+      isActive: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-11",
+      text: "=",
       isActive: true,
     },
   ],
