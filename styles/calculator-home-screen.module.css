@@ -1,0 +1,14 @@
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(14, 16%);
+  grid-gap: 3% 0.3%;
+}
+
+.button-item {
+  grid-row: span 2;
+}
+
+.dummy-item {
+  visibility: hidden;
+}
