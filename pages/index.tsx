@@ -16,7 +16,7 @@ const Home = () => {
       <CalculatorScreen />
       <div className={classes["button-container"]}>
         {calculatorSelector.buttonKeys.map((item) => (
-          <CalclatorButton key={item.id} buttonKeyGroup={item} />
+          <CalclatorButton key={item.id} buttonKey={item} />
         ))}
       </div>
     </Fragment>
