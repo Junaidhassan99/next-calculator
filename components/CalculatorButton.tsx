@@ -9,20 +9,27 @@ const CalclatorButton: React.FC<{
 }> = ({ children, buttonKey }) => {
   const calculatorDispatch = useAppDispatch();
 
-  return buttonKey.isVisible ? (
-    <button
-      className={
-        buttonKey.isBigSize === true ? classes["button-item"] : undefined
-      }
-      onClick={() => {
-        if (buttonKey.id === "k-46") {
-          calculatorDispatch(onShiftClick());
+  if (buttonKey.id === "k-d") {
+    return <div></div>;
+  } else if (buttonKey.isVisible) {
+    return (
+      <button
+        className={
+          buttonKey.isBigSize === true ? classes["button-item"] : undefined
         }
-      }}
-    >
-      {buttonKey.text}
-    </button>
-  ) : null;
+        onClick={() => {
+          if (buttonKey.id === "k-46") {
+            calculatorDispatch(onShiftClick());
+          }
+        }}
+      >
+        {buttonKey.text}
+        {/* {`${buttonKey.text} - ${buttonKey.id}`} */}
+      </button>
+    );
+  } else {
+    return null;
+  }
 };
 
 export default CalclatorButton;
