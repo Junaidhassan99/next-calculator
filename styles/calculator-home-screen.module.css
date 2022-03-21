@@ -9,11 +9,10 @@
 .button-container {
   display: grid;
   grid-template-columns: repeat(8,12%);
-  grid-template-rows: repeat(6,40%);
+  grid-template-rows: repeat(8,40%);
   grid-gap: 5% 0.3%;
 }
 
-/* .button-item{
-  use location technique
-  height: 200%;
-} */
+.button-item{
+  grid-row: span 2;
+}
