@@ -12,14 +12,14 @@ const Home = () => {
   const calculatorDispatch = useAppDispatch();
 
   return (
-    <Fragment>
+    <div className={classes["calculator-page-body"]}>
       <CalculatorScreen />
       <div className={classes["button-container"]}>
         {calculatorSelector.buttonKeys.map((item) => (
           <CalclatorButton key={item.id} buttonKeyGroup={item} />
         ))}
       </div>
-    </Fragment>
+    </div>
   );
 };
 

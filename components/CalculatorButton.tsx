@@ -21,11 +21,12 @@ const CalclatorButton: React.FC<{
       {buttonKeyGroup.value.map((item) => {
         return item.isVisible ? (
           <button
+            key={item.text}
             className={`${
               buttonKeyGroup.value.length === 1
-                ? classes["button-item"]
+                ? classes["button-item-big"]
                 : undefined
-            } ${mId === "k-d" ? classes["dummy-item"] : undefined}`}
+            } ${classes["button-item"]}`}
             onClick={() => {
               if (item.text === "shift") {
                 calculatorDispatch(onShiftClick());
