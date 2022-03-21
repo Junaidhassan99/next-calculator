@@ -1,18 +1,14 @@
-/* .button-container {
-  display: grid;
-  grid-template-columns: repeat(8,12%);
-  grid-template-rows: repeat(2,40%) repeat(4,80%);
-  grid-gap: 5% 0.3%;
-} */
-
-
 .button-container {
   display: grid;
-  grid-template-columns: repeat(8,12%);
-  grid-template-rows: repeat(9,40%);
-  grid-gap: 5% 0.3%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(14, 16%);
+  grid-gap: 3% 0.3%;
 }
 
-.button-item{
+.button-item {
   grid-row: span 2;
+}
+
+.dummy-item {
+  visibility: hidden;
 }
