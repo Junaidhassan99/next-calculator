@@ -238,6 +238,22 @@ function getButtonKeysOnShift(
     },
 
     {
+      id: "k-34",
+      value: [
+        {
+          text: "(",
+          isActive: true,
+          isVisible: true,
+        },
+        {
+          text: ")",
+          isActive: true,
+          isVisible: true,
+        },
+      ],
+    },
+
+    {
       id: "k-16",
       value: [
         {

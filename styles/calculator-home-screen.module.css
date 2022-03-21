@@ -6,8 +6,8 @@
 .button-container {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(14, 12%);
-  grid-gap: 1.5% 0.3%;
+  grid-template-rows: repeat(15, 10%);
+  grid-gap: 2% 0.6%;
 }
 
 .button-item-big {
@@ -18,7 +18,11 @@
   font-size: 1.1rem;
 }
 
-.calculator-screen{
+.double-row-size {
+  grid-column-start: span 2;
+}
+
+.calculator-screen {
   text-align: right;
   margin: 3%;
   margin-left: 1%;

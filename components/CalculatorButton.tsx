@@ -23,10 +23,10 @@ const CalclatorButton: React.FC<{
           <button
             key={item.text}
             className={`${
-              buttonKeyGroup.value.length === 1
-                ? classes["button-item-big"]
-                : undefined
-            } ${classes["button-item"]}`}
+              buttonKeyGroup.value.length === 1 && classes["button-item-big"]
+            } ${classes["button-item"]} ${
+              buttonKeyGroup.id === "k-34" && classes["double-row-size"]
+            }`}
             onClick={() => {
               if (item.text === "shift") {
                 calculatorDispatch(onShiftClick());
