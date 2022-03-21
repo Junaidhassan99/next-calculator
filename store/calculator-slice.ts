@@ -5,14 +5,8 @@ const initialIsShiftSelectedState = false;
 
 function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
   let buttonKeyPlaceHolder = [
-    //max:k-47
-    
-    {
-      id: "k-23",
-      text: "abs",
-      isActive: true,
-      isVisible: true,
-    },
+    //max:k-49
+
     {
       id: "k-12",
       text: "sin",
@@ -104,6 +98,126 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
+      id: "k-23",
+      text: "abs",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      id: "k-7",
+      text: "7",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-8",
+      text: "8",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-9",
+      text: "9",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-41",
+      text: "/",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-4",
+      text: "4",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-5",
+      text: "5",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-6",
+      text: "6",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-40",
+      text: "*",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+
+    {
+      id: "k-1",
+      text: "1",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-2",
+      text: "2",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-3",
+      text: "3",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-39",
+      text: "-",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+
+    {
+      id: "k-0",
+      text: "0",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-10",
+      text: ".",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-11",
+      text: "=",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
+      id: "k-38",
+      text: "+",
+      isActive: true,
+      isVisible: true,
+      isBigSize: true,
+    },
+    {
       id: "k-29",
       text: "x!",
       isActive: true,
@@ -141,33 +255,12 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      id: "k-7",
-      text: "7",
+      id: "k-20",
+      text: "10^x",
       isActive: true,
       isVisible: true,
-      isBigSize: true,
     },
-    {
-      id: "k-8",
-      text: "8",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-9",
-      text: "9",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-41",
-      text: "/",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
+
     {
       id: "k-19",
       text: "ln",
@@ -175,8 +268,8 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      id: "k-20",
-      text: "10^x",
+      id: "k-30",
+      text: "e^x",
       isActive: true,
       isVisible: true,
     },
@@ -204,12 +297,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
     },
-    {
-      id: "k-30",
-      text: "e^x",
-      isActive: true,
-      isVisible: true,
-    },
+
     {
       id: "k-31",
       text: "mod",
@@ -218,35 +306,6 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     },
 
     {
-      id: "k-4",
-      text: "4",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-5",
-      text: "5",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-6",
-      text: "6",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-40",
-      text: "*",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-
-  {
       id: "k-46",
       text: "shift",
       isActive: true,
@@ -254,247 +313,14 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     },
 
     {
-      id: "k-d",
-      text: "dummy",
+      id: "k-48",
+      text: "(",
       isActive: true,
       isVisible: true,
     },
     {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-1",
-      text: "1",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-2",
-      text: "2",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-3",
-      text: "3",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-39",
-      text: "-",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-
-    {
-      id: "k-0",
-      text: "0",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-10",
-      text: ".",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-11",
-      text: "=",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-38",
-      text: "+",
-      isActive: true,
-      isVisible: true,
-      isBigSize: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      id: "k-d",
-      text: "dummy",
+      id: "k-49",
+      text: ")",
       isActive: true,
       isVisible: true,
     },
@@ -508,6 +334,8 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     "k-14",
     "k-15",
     "k-16",
+    "k-18",
+    "k-19",
   ];
 
   //actions.payload === false
@@ -518,6 +346,8 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     "k-35",
     "k-36",
     "k-37",
+    "k-20",
+    "k-30",
   ];
 
   if (isShiftSelected) {

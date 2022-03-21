@@ -15,9 +15,23 @@ const Home = () => {
     <Fragment>
       <CalculatorScreen />
       <div className={classes["button-container"]}>
-        {calculatorSelector.buttonKeys.map((item) => (
-          <CalclatorButton key={item.id} buttonKey={item} />
-        ))}
+        <div
+          className={`${classes["button-container-grid-top"]} ${classes["button-container-item"]}`}
+        >
+          {calculatorSelector.buttonKeys.slice(0, 16).map((item) => (
+            <CalclatorButton key={item.id} buttonKey={item} />
+          ))}
+        </div>
+        <div className={`${classes["button-container-grid-bottom-left"]}`}>
+          {calculatorSelector.buttonKeys.slice(16, 32).map((item) => (
+            <CalclatorButton key={item.id} buttonKey={item} />
+          ))}
+        </div>
+        <div className={`${classes["button-container-grid-bottom-left"]}`}>
+          {calculatorSelector.buttonKeys.slice(32, 42).map((item) => (
+            <CalclatorButton key={item.id} buttonKey={item} />
+          ))}
+        </div>
       </div>
     </Fragment>
   );
