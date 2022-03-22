@@ -3,450 +3,301 @@ import { RootState } from "./store";
 
 const initialIsShiftSelectedState = false;
 
-function getButtonKeysOnShift(
-  isShiftSelected: boolean
-): { id: string; value: ButtonKeyType[] }[] {
-  let buttonKeyGroupPlaceHolder: ButtonKeyGroupType[] = [
+function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
+  let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
-      id: "k-0",
-      value: [
-        {
-          text: "sin",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "cosec",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "sin",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-1",
-      value: [
-        {
-          text: "inv(sin)",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "inv(cosec)",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv(sin)",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-2",
-      value: [
-        {
-          text: "cos",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "sec",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-3",
-      value: [
-        {
-          text: "inv(cos)",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "inv(sec)",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-4",
-      value: [
-        {
-          text: "tan",
-          isActive: true,
-          isVisible: true,
-        },
-
-        {
-          text: "cot",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-5",
-      value: [
-        {
-          text: "inv(tan)",
-          isActive: true,
-          isVisible: true,
-        },
-
-        {
-          text: "inv(cot)",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-6",
-      value: [
-        {
-          text: "x^2",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "x^3",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-7",
-      value: [
-        {
-          text: "inv",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "x!",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-8",
-      value: [
-        {
-          text: "log",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "10^x",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-9",
-      value: [
-        {
-          text: "ln",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "e^x",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-10",
-      value: [
-        {
-          text: "abs",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "hyp",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-11",
-      value: [
-        {
-          text: "sqrt",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "^",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-    {
-      id: "k-12",
-      value: [
-        {
-          text: "pi",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "e",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "cosec",
+      isActive: true,
+      isVisible: true,
     },
 
     {
-      id: "k-14",
-      value: [
-        {
-          text: "CE",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "C",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv(cosec)",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "cos",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "inv(cos)",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "sec",
+      isActive: true,
+      isVisible: true,
     },
 
     {
-      id: "k-13",
-      value: [
-        {
-          text: "backspace",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: "shift",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv(sec)",
+      isActive: true,
+      isVisible: true,
     },
 
     {
-      id: "k-34",
-      value: [
-        {
-          text: "(",
-          isActive: true,
-          isVisible: true,
-        },
-        {
-          text: ")",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "tan",
+      isActive: true,
+      isVisible: true,
     },
 
     {
-      id: "k-16",
-      value: [
-        {
-          text: "7",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv(tan)",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-17",
-      value: [
-        {
-          text: "8",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "cot",
+      isActive: true,
+      isVisible: true,
     },
 
     {
-      id: "k-18",
-      value: [
-        {
-          text: "9",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv(cot)",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-19",
-      value: [
-        {
-          text: "/",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-
-    {
-      id: "k-22",
-      value: [
-        {
-          text: "4",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "x^2",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-23",
-      value: [
-        {
-          text: "5",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "x^3",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-24",
-      value: [
-        {
-          text: "6",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "inv",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-25",
-      value: [
-        {
-          text: "*",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-
-    {
-      id: "k-26",
-      value: [
-        {
-          text: "1",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "x!",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-27",
-      value: [
-        {
-          text: "2",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "log",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-28",
-      value: [
-        {
-          text: "3",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "10^x",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-29",
-      value: [
-        {
-          text: "-",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
-    },
-
-    {
-      id: "k-30",
-      value: [
-        {
-          text: "0",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "ln",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-31",
-      value: [
-        {
-          text: ".",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "e^x",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-32",
-      value: [
-        {
-          text: "=",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "abs",
+      isActive: true,
+      isVisible: true,
     },
     {
-      id: "k-33",
-      value: [
-        {
-          text: "+",
-          isActive: true,
-          isVisible: true,
-        },
-      ],
+      text: "hyp",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "sqrt",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "^",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "pi",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "e",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "CE",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "C",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "backspace",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "shift",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "(",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: ")",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "mod",
+      isActive: true,
+      isVisible: true,
+      isHeightDouble: true,
+    },
+    {
+      text: "7",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "8",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "9",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "/",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "4",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "5",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "6",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "*",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "1",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "2",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "3",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "-",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "0",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: ".",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "=",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "+",
+      isActive: true,
+      isVisible: true,
     },
   ];
 
   //actions.payload === true
-  const setVisibilityForShiftSelected = ["k-1", "k-3", "k-5"];
+  const setVisibilityForShiftSelected = [
+    "inv(sin)",
+    "inv(cos)",
+    "inv(tan)",
+    "inv(cosec)",
+    "inv(sec)",
+    "inv(cot)",
+  ];
 
   //actions.payload === false
-  const setVisibilityForShiftUnSelected = ["k-0", "k-2", "k-4"];
+  const setVisibilityForShiftUnSelected = [
+    "sin",
+    "cos",
+    "tan",
+    "cosec",
+    "sec",
+    "cot",
+  ];
 
-  function setVisibility(mId: string) {
-    const indexOfItem = buttonKeyGroupPlaceHolder
-      .map((item) => item.id)
-      .indexOf(mId);
+  function setVisibility(mText: string) {
+    const indexOfItem = buttonKeyPlaceHolder
+      .map((item) => item.text)
+      .indexOf(mText);
 
-    buttonKeyGroupPlaceHolder[indexOfItem].value.forEach((item, index) => {
-      buttonKeyGroupPlaceHolder[indexOfItem].value[index].isVisible =
-        !buttonKeyGroupPlaceHolder[indexOfItem].value[index].isVisible;
-    });
+    buttonKeyPlaceHolder[indexOfItem].isVisible =
+      !buttonKeyPlaceHolder[indexOfItem].isVisible;
   }
 
   if (!isShiftSelected) {
-    setVisibilityForShiftSelected.forEach((mId) => {
-      setVisibility(mId);
+    setVisibilityForShiftSelected.forEach((mText) => {
+      setVisibility(mText);
     });
   } else {
-    setVisibilityForShiftUnSelected.forEach((mId) => {
-      setVisibility(mId);
+    setVisibilityForShiftUnSelected.forEach((mText) => {
+      setVisibility(mText);
     });
   }
 
-  return buttonKeyGroupPlaceHolder;
+  return buttonKeyPlaceHolder;
 }
 
 export type ButtonKeyType = {
@@ -456,15 +307,14 @@ export type ButtonKeyType = {
   isActive: boolean;
   //remove components from screen
   isVisible: boolean;
+  isHeightDouble?: boolean;
 };
-
-export type ButtonKeyGroupType = { id: string; value: ButtonKeyType[] };
 
 // Define a type for the slice state
 type CalculatorState = {
   screenText: string;
   isShiftSelected: boolean;
-  buttonKeys: ButtonKeyGroupType[];
+  buttonKeys: ButtonKeyType[];
 };
 
 // Define the initial state using that type
@@ -480,13 +330,11 @@ export const calculatorSlice = createSlice({
   reducers: {
     setAvalibility(state, actions: PayloadAction<string>) {
       const indexToUpdate = state.buttonKeys
-        .map((items) => items.id)
+        .map((items) => items.text)
         .indexOf(actions.payload);
 
-      state.buttonKeys[indexToUpdate].value.forEach((item, index) => {
-        state.buttonKeys[indexToUpdate].value[index].isActive =
-          !state.buttonKeys[indexToUpdate].value[index].isActive;
-      });
+      state.buttonKeys[indexToUpdate].isActive =
+        !state.buttonKeys[indexToUpdate].isActive;
     },
     onShiftClick(state) {
       state.isShiftSelected = !state.isShiftSelected;
