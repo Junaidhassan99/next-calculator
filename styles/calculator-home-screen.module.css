@@ -42,6 +42,10 @@
   grid-row-gap: 1.23%;
 }
 
+.button-container-grid-right-shift{
+  grid-template-columns: repeat(1, 95%);
+}
+
 .button-item {
   font-size: 1.5rem;
   white-space: nowrap;

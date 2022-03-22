@@ -39,7 +39,12 @@ const Home = () => {
         </div>
         <div className={classes["button-container-flex-grow-right"]}>
           <div
-            className={`${classes["button-container-grid"]} ${classes["button-container-grid-right"]}`}
+            className={`${classes["button-container-grid"]} ${
+              classes["button-container-grid-right"]
+            } ${
+              calculatorSelector.isShiftSelected &&
+              classes["button-container-grid-right-shift"]
+            }`}
           >
             {calculatorSelector.buttonKeys.slice(22, 33).map((item) => (
               <CalclatorButton key={item.text} buttonKey={item} />

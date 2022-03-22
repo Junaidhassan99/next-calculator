@@ -6,122 +6,122 @@ const initialIsShiftSelectedState = false;
 function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
-      text: "sin",
+      text: "sin(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "inv(sin)",
+      text: "inv(sin(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "cosec",
-      isActive: true,
-      isVisible: true,
-    },
-
-    {
-      text: "inv(cosec)",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "cos",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "inv(cos)",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "sec",
+      text: "cosec(",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(sec)",
+      text: "inv(cosec(",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "cos(",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "inv(cos(",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "sec(",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "tan",
+      text: "inv(sec(",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(tan)",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "cot",
+      text: "tan(",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(cot)",
+      text: "inv(tan(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "x^2",
+      text: "cot(",
+      isActive: true,
+      isVisible: true,
+    },
+
+    {
+      text: "inv(cot(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "x^3",
+      text: "^2",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "inv",
+      text: "^3",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "x!",
+      text: "inv(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "log",
+      text: "!",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "10^x",
+      text: "log(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "ln",
+      text: "10^(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "e^x",
+      text: "ln(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "abs",
+      text: "e^(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "hyp",
+      text: "abs(",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "sqrt",
+      text: "hyp(",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "sqrt(",
       isActive: true,
       isVisible: true,
     },
@@ -172,7 +172,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      text: "mod",
+      text: "mod(",
       isActive: true,
       isVisible: true,
       isHeightDouble: true,
@@ -261,22 +261,22 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
 
   //actions.payload === true
   const setVisibilityForShiftSelected = [
-    "inv(sin)",
-    "inv(cos)",
-    "inv(tan)",
-    "inv(cosec)",
-    "inv(sec)",
-    "inv(cot)",
+    "inv(sin(",
+    "inv(cos(",
+    "inv(tan(",
+    "inv(cosec(",
+    "inv(sec(",
+    "inv(cot(",
   ];
 
   //actions.payload === false
   const setVisibilityForShiftUnSelected = [
-    "sin",
-    "cos",
-    "tan",
-    "cosec",
-    "sec",
-    "cot",
+    "sin(",
+    "cos(",
+    "tan(",
+    "cosec(",
+    "sec(",
+    "cot(",
   ];
 
   function setVisibility(mText: string) {
