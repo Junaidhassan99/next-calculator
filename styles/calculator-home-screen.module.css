@@ -11,20 +11,14 @@
 .button-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
-  /* align-items: center;
-  margin-top: 10px; */
-  /* background-color: red; */
 }
 
 .button-container-flex-grow-left {
   flex-grow: 4;
-  /* background-color: blue; */
 }
 
 .button-container-flex-grow-right {
   flex-grow: 1;
-  /* background-color: green; */
 }
 
 .button-container-grid {
@@ -44,15 +38,18 @@
 
 .button-container-grid-right {
   grid-template-columns: repeat(1, 80%);
-  grid-template-rows: repeat(12, 8.1%);
-  grid-row-gap: 1.28%;
+  grid-template-rows: repeat(12, 8%);
+  grid-row-gap: 1.23%;
 }
 
 .button-item {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  padding: 2.5%;
+  
 }
 
 .double-row-size {
@@ -66,9 +63,3 @@
   margin-right: 5%;
   font-size: 3rem;
 }
-
-/* @media only screen and (max-width: 390px) {
-  .calculator-screen {
-    width:calc(100% / 390);
-  }
-} */
