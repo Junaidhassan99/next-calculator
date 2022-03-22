@@ -67,3 +67,10 @@
   margin-right: 5%;
   font-size: 3rem;
 }
+
+.screen-style{
+  white-space: nowrap;
+  overflow-y : auto;
+  margin: 1%;
+  margin-right: 5%;
+}

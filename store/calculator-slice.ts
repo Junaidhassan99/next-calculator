@@ -6,67 +6,67 @@ const initialIsShiftSelectedState = false;
 function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
-      text: "sin(",
+      text: "sin(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "inv(sin(",
+      text: "inv(sin(x))",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "cosec(",
-      isActive: true,
-      isVisible: true,
-    },
-
-    {
-      text: "inv(cosec(",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "cos(",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "inv(cos(",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "sec(",
+      text: "cosec(x)",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(sec(",
+      text: "inv(cosec(x))",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "cos(x)",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "inv(cos(x))",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "sec(x)",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "tan(",
+      text: "inv(sec(x))",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(tan(",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "cot(",
+      text: "tan(x)",
       isActive: true,
       isVisible: true,
     },
 
     {
-      text: "inv(cot(",
+      text: "inv(tan(x))",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "cot(x)",
+      isActive: true,
+      isVisible: true,
+    },
+
+    {
+      text: "inv(cot(x))",
       isActive: true,
       isVisible: true,
     },
@@ -81,7 +81,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      text: "inv(",
+      text: "inv(x)",
       isActive: true,
       isVisible: true,
     },
@@ -91,37 +91,37 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      text: "log(",
+      text: "log(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "10^(",
+      text: "10^(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "ln(",
+      text: "ln(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "e^(",
+      text: "e^(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "abs(",
+      text: "abs(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "hyp(",
+      text: "hyp(x)",
       isActive: true,
       isVisible: true,
     },
     {
-      text: "sqrt(",
+      text: "sqrt(x)",
       isActive: true,
       isVisible: true,
     },
@@ -130,20 +130,12 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
     },
-    {
-      text: "pi",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "e",
-      isActive: true,
-      isVisible: true,
-    },
+
     {
       text: "backspace",
       isActive: true,
       isVisible: true,
+      isHeightDouble: true,
     },
     {
       text: "shift",
@@ -160,19 +152,29 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
     },
+    {
+      text: "pi",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "e",
+      isActive: true,
+      isVisible: true,
+    },
 
+    // {
+    //   text: "(",
+    //   isActive: true,
+    //   isVisible: true,
+    // },
+    // {
+    //   text: ")",
+    //   isActive: true,
+    //   isVisible: true,
+    // },
     {
-      text: "(",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: ")",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "mod(",
+      text: "mod(x)",
       isActive: true,
       isVisible: true,
       isHeightDouble: true,
@@ -181,16 +183,19 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "7",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "8",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "9",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "/",
@@ -201,16 +206,19 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "4",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "5",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "6",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "*",
@@ -221,16 +229,19 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "1",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "2",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "3",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "-",
@@ -241,11 +252,13 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "0",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: ".",
       isActive: true,
       isVisible: true,
+      allowBackSpace: true,
     },
     {
       text: "=",
@@ -261,22 +274,22 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
 
   //actions.payload === true
   const setVisibilityForShiftSelected = [
-    "inv(sin(",
-    "inv(cos(",
-    "inv(tan(",
-    "inv(cosec(",
-    "inv(sec(",
-    "inv(cot(",
+    "inv(sin(x))",
+    "inv(cos(x))",
+    "inv(tan(x))",
+    "inv(cosec(x))",
+    "inv(sec(x))",
+    "inv(cot(x))",
   ];
 
   //actions.payload === false
   const setVisibilityForShiftUnSelected = [
-    "sin(",
-    "cos(",
-    "tan(",
-    "cosec(",
-    "sec(",
-    "cot(",
+    "sin(x)",
+    "cos(x)",
+    "tan(x)",
+    "cosec(x)",
+    "sec(x)",
+    "cot(x)",
   ];
 
   function setVisibility(mText: string) {
@@ -310,6 +323,7 @@ export type ButtonKeyType = {
   isVisible: boolean;
   //explicitly make a component big
   isHeightDouble?: boolean;
+  allowBackSpace?: boolean;
 };
 
 // Define a type for the slice state
@@ -343,8 +357,46 @@ export const calculatorSlice = createSlice({
 
       state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
     },
+    addTextToScreen(state, actions: PayloadAction<string>) {
+      if (state.screenText === "0") {
+        state.screenText = actions.payload;
+      } else {
+        state.screenText += actions.payload;
+      }
+    },
+    removeFromScreen(state) {
+      state.buttonKeys.forEach((item) => {
+        if (state.screenText.endsWith(item.text) && item.allowBackSpace) {
+          state.screenText = state.screenText.slice(0, -item.text.length);
+
+          if (state.screenText.length === 0) {
+            state.screenText = "0";
+          }
+        }
+      });
+    },
+    clearLastNumber(state) {
+      //CE
+      const matches = state.screenText.match(/\d+$/);
+
+      if (matches !== null) {
+        state.screenText = state.screenText.slice(0, -matches[0].length);
+      }
+    },
+    clearScreen(state) {
+      //C
+
+      state.screenText = "0";
+    },
   },
 });
 
-export const { setAvalibility, onShiftClick } = calculatorSlice.actions;
+export const {
+  setAvalibility,
+  onShiftClick,
+  addTextToScreen,
+  removeFromScreen,
+  clearLastNumber,
+  clearScreen,
+} = calculatorSlice.actions;
 export default calculatorSlice.reducer;
