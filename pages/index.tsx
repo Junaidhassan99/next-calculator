@@ -12,8 +12,12 @@ const Home = () => {
   const calculatorDispatch = useAppDispatch();
 
   return (
-    <div className={classes["calculator-page-body"]}>
-      <CalculatorScreen />
+    <div
+      className={`${classes["calculator-page-body"]} ${classes["calculator-page-container"]}`}
+    >
+      <div>
+        <CalculatorScreen />
+      </div>
       <div className={classes["button-container"]}>
         <div className={classes["button-container-flex-grow-left"]}>
           <div

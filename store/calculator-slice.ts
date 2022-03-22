@@ -141,16 +141,6 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
     },
     {
-      text: "CE",
-      isActive: true,
-      isVisible: true,
-    },
-    {
-      text: "C",
-      isActive: true,
-      isVisible: true,
-    },
-    {
       text: "backspace",
       isActive: true,
       isVisible: true,
@@ -160,6 +150,17 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
     },
+    {
+      text: "CE",
+      isActive: true,
+      isVisible: true,
+    },
+    {
+      text: "C",
+      isActive: true,
+      isVisible: true,
+    },
+
     {
       text: "(",
       isActive: true,
@@ -307,6 +308,7 @@ export type ButtonKeyType = {
   isActive: boolean;
   //remove components from screen
   isVisible: boolean;
+  //explicitly make a component big
   isHeightDouble?: boolean;
 };
 

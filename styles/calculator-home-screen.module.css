@@ -3,6 +3,11 @@
   margin-right: 10%;
 }
 
+.calculator-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
@@ -45,6 +50,9 @@
 
 .button-item {
   font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .double-row-size {
@@ -58,3 +66,9 @@
   margin-right: 5%;
   font-size: 3rem;
 }
+
+/* @media only screen and (max-width: 390px) {
+  .calculator-screen {
+    width:calc(100% / 390);
+  }
+} */
