@@ -18,6 +18,7 @@ const CalclatorButton: React.FC<{
   const calculatorDispatch = useAppDispatch();
 
   function buttonClickHandler() {
+    //None type is handled here
     switch (buttonKey.text) {
       case "shift": {
         calculatorDispatch(onShiftClick());
@@ -36,7 +37,7 @@ const CalclatorButton: React.FC<{
         break;
       }
       default: {
-        calculatorDispatch(addTextToScreen(buttonKey.text));
+        calculatorDispatch(addTextToScreen(buttonKey));
         break;
       }
     }

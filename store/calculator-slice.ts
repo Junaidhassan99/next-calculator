@@ -1,7 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { stat } from "fs";
 import { RootState } from "./store";
 
 const initialIsShiftSelectedState = false;
+
+enum ButtonKind {
+  Function,
+  Number,
+  Operator,
+  None,
+  Constant,
+}
 
 function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
@@ -9,126 +18,150 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "sin(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "inv(sin(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "cosec(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
 
     {
       text: "inv(cosec(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "cos(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "inv(cos(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "sec(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
 
     {
       text: "inv(sec(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
 
     {
       text: "tan(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
 
     {
       text: "inv(tan(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "cot(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
 
     {
       text: "inv(cot(x))",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "^2",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "^3",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "inv(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "!",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "log(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "10^(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "ln(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "e^(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "abs(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "hyp(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "sqrt(x)",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Function,
     },
     {
       text: "^",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Operator,
     },
 
     {
@@ -136,31 +169,39 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       isHeightDouble: true,
+      buttonKind: ButtonKind.None,
     },
     {
       text: "shift",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.None,
     },
     {
       text: "CE",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.None,
     },
     {
       text: "C",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.None,
     },
     {
       text: "pi",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Constant,
+      constantValue: Math.PI,
     },
     {
       text: "e",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Constant,
+      constantValue: Math.E,
     },
 
     // {
@@ -174,101 +215,118 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     //   isVisible: true,
     // },
     {
-      text: "mod(x)",
+      text: "%",
       isActive: true,
       isVisible: true,
       isHeightDouble: true,
+      buttonKind: ButtonKind.Operator,
     },
     {
       text: "7",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "8",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "9",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "/",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Operator,
     },
     {
       text: "4",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "5",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "6",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "*",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Operator,
     },
     {
       text: "1",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "2",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "3",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "-",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Operator,
     },
     {
       text: "0",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: ".",
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
+      buttonKind: ButtonKind.Operator,
     },
     {
       text: "=",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.None,
     },
     {
       text: "+",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.Operator,
     },
   ];
 
@@ -321,9 +379,11 @@ export type ButtonKeyType = {
   isActive: boolean;
   //remove components from screen
   isVisible: boolean;
+  buttonKind: ButtonKind;
   //explicitly make a component big
   isHeightDouble?: boolean;
   allowBackSpace?: boolean;
+  constantValue?: number;
 };
 
 // Define a type for the slice state
@@ -357,11 +417,24 @@ export const calculatorSlice = createSlice({
 
       state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
     },
-    addTextToScreen(state, actions: PayloadAction<string>) {
-      if (state.screenText === "0") {
-        state.screenText = actions.payload;
-      } else {
-        state.screenText += actions.payload;
+    addTextToScreen(state, actions: PayloadAction<ButtonKeyType>) {
+      if (actions.payload.buttonKind === ButtonKind.Number) {
+        if (state.screenText === "0") {
+          state.screenText = actions.payload.text;
+        } else {
+          state.screenText += actions.payload.text;
+        }
+      } else if (actions.payload.buttonKind === ButtonKind.Operator) {
+        state.screenText += actions.payload.text;
+      } else if (
+        actions.payload.buttonKind === ButtonKind.Constant &&
+        actions.payload.constantValue !== undefined
+      ) {
+        if (state.screenText === "0") {
+          state.screenText = actions.payload.constantValue.toString();
+        } else {
+          state.screenText += actions.payload.constantValue.toString();
+        }
       }
     },
     removeFromScreen(state) {
@@ -381,6 +454,10 @@ export const calculatorSlice = createSlice({
 
       if (matches !== null) {
         state.screenText = state.screenText.slice(0, -matches[0].length);
+      }
+
+      if (state.screenText.length === 0) {
+        state.screenText = "0";
       }
     },
     clearScreen(state) {
