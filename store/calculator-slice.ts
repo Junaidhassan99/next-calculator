@@ -5,10 +5,15 @@ import { RootState } from "./store";
 const initialIsShiftSelectedState = false;
 
 enum ButtonKind {
+  //has one input and one output
   Function,
+  //is from 0-9 and .
   Number,
+  //has two inputs and one output
   Operator,
+  //special operations and show nothing on the screen eg: backspace
   None,
+  //constants
   Constant,
 }
 
@@ -418,22 +423,42 @@ export const calculatorSlice = createSlice({
       state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
     },
     addTextToScreen(state, actions: PayloadAction<ButtonKeyType>) {
-      if (actions.payload.buttonKind === ButtonKind.Number) {
-        if (state.screenText === "0") {
-          state.screenText = actions.payload.text;
-        } else {
-          state.screenText += actions.payload.text;
-        }
-      } else if (actions.payload.buttonKind === ButtonKind.Operator) {
+      function getOperatorKeys() {
         let operators: string[] = [];
 
+        //get a list of all operators
         state.buttonKeys.forEach((item) => {
           if (item.buttonKind === ButtonKind.Operator) {
             operators.push(item.text);
           }
         });
 
-        if (!operators.some((v) => state.screenText.includes(v))) {
+        return operators;
+      }
+
+      if (actions.payload.buttonKind === ButtonKind.Number) {
+        if (state.screenText === "0" && actions.payload.text !== ".") {
+          state.screenText = actions.payload.text;
+        } else if (actions.payload.text === ".") {
+          const operatorOnScreen = getOperatorKeys().filter((v) =>
+            state.screenText.includes(v)
+          )[0];
+
+          const lastNumberWithPoint =
+            operatorOnScreen === undefined
+              ? state.screenText
+              : state.screenText.substring(
+                  state.screenText.indexOf(operatorOnScreen) + 1
+                );
+
+          if (!lastNumberWithPoint.includes(".")) {
+            state.screenText += actions.payload.text;
+          }
+        } else {
+          state.screenText += actions.payload.text;
+        }
+      } else if (actions.payload.buttonKind === ButtonKind.Operator) {
+        if (!getOperatorKeys().some((v) => state.screenText.includes(v))) {
           state.screenText += actions.payload.text;
         }
       } else if (
