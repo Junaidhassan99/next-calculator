@@ -314,7 +314,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       allowBackSpace: true,
-      buttonKind: ButtonKind.Operator,
+      buttonKind: ButtonKind.Number,
     },
     {
       text: "=",
@@ -425,7 +425,17 @@ export const calculatorSlice = createSlice({
           state.screenText += actions.payload.text;
         }
       } else if (actions.payload.buttonKind === ButtonKind.Operator) {
-        state.screenText += actions.payload.text;
+        let operators: string[] = [];
+
+        state.buttonKeys.forEach((item) => {
+          if (item.buttonKind === ButtonKind.Operator) {
+            operators.push(item.text);
+          }
+        });
+
+        if (!operators.some((v) => state.screenText.includes(v))) {
+          state.screenText += actions.payload.text;
+        }
       } else if (
         actions.payload.buttonKind === ButtonKind.Constant &&
         actions.payload.constantValue !== undefined
