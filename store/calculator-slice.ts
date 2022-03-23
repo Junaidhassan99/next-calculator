@@ -436,6 +436,23 @@ export const calculatorSlice = createSlice({
         return operators;
       }
 
+      function calculateOperatorResult() {
+        const operatorOnScreen = getOperatorKeys().filter((v) =>
+          state.screenText.includes(v)
+        )[0];
+
+        const a = state.screenText.substring(
+          0,
+          state.screenText.indexOf(operatorOnScreen)
+        );
+
+        const b = state.screenText.substring(
+          state.screenText.indexOf(operatorOnScreen) + 1
+        );
+
+        console.log(`a: ${a} b: ${b} operator: ${operatorOnScreen}`);
+      }
+
       if (actions.payload.buttonKind === ButtonKind.Number) {
         if (state.screenText === "0" && actions.payload.text !== ".") {
           state.screenText = actions.payload.text;
@@ -460,6 +477,9 @@ export const calculatorSlice = createSlice({
       } else if (actions.payload.buttonKind === ButtonKind.Operator) {
         if (!getOperatorKeys().some((v) => state.screenText.includes(v))) {
           state.screenText += actions.payload.text;
+        } else {
+          //calculate operator result
+          calculateOperatorResult();
         }
       } else if (
         actions.payload.buttonKind === ButtonKind.Constant &&
@@ -470,6 +490,15 @@ export const calculatorSlice = createSlice({
         } else {
           state.screenText += actions.payload.constantValue.toString();
         }
+      } else if (actions.payload.buttonKind === ButtonKind.Function) {
+        if (!isNaN(+state.screenText)) {
+          //it is a single number, so apply function directly
+        } else {
+          //calculate operator result
+          calculateOperatorResult();
+        }
+      } else {
+        //do nothing or handle none type later
       }
     },
     removeFromScreen(state) {
