@@ -5,6 +5,7 @@ import { RootState } from "./store";
 //import { getDefaultMiddleware } from '@reduxjs/toolkit';
 
 const initialIsShiftSelectedState = false;
+const initialIsHypSelectedState = false;
 
 enum ButtonKind {
   //has one input and one output
@@ -30,7 +31,10 @@ function factorialize(num: number) {
   return result;
 }
 
-function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
+function getButtonKeysOnShift(
+  isShiftSelected: boolean,
+  isHypSelected: boolean
+): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
       text: "sin(x)",
@@ -44,6 +48,26 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     },
     {
       text: "inv(sin(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "sinh(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.sin(input[0]);
+        //uk
+      },
+    },
+    {
+      text: "inv(sinh(x))",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -74,6 +98,27 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       },
     },
     {
+      text: "cosech(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.sin(input[0]);
+        //uk
+      },
+    },
+
+    {
+      text: "inv(cosech(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
       text: "cos(x)",
       isActive: true,
       isVisible: true,
@@ -85,6 +130,26 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     },
     {
       text: "inv(cos(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "cosh(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.cos(input[0]);
+        //uk
+      },
+    },
+    {
+      text: "inv(cosh(x))",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -114,7 +179,27 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
         //uk
       },
     },
+    {
+      text: "sech(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.cos(input[0]);
+        //uk
+      },
+    },
 
+    {
+      text: "inv(sech(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
     {
       text: "tan(x)",
       isActive: true,
@@ -137,6 +222,27 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       },
     },
     {
+      text: "tanh(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.tan(input[0]);
+        //uk
+      },
+    },
+
+    {
+      text: "inv(tanh(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
       text: "cot(x)",
       isActive: true,
       isVisible: true,
@@ -149,6 +255,27 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
 
     {
       text: "inv(cot(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "coth(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.tan(input[0]);
+        //uk
+      },
+    },
+
+    {
+      text: "inv(coth(x))",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -275,10 +402,18 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       },
     },
     {
+      text: "backspace",
+      isActive: true,
+      isVisible: true,
+      isHeightDouble: true,
+      buttonKind: ButtonKind.ScreenOperation,
+    },
+    {
       text: "shift",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.ScreenOperation,
+      isHeightDouble: true,
     },
     {
       text: "hyp",
@@ -289,14 +424,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
         return 0.0;
         //uk
       },
-    },
-    {
-      text: "backspace",
-      isActive: true,
-      isVisible: true,
       isHeightDouble: true,
-      buttonKind: ButtonKind.ScreenOperation,
     },
+
     {
       text: "CE",
       isActive: true,
@@ -456,8 +586,8 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     },
   ];
 
-  //actions.payload === true
-  const setVisibilityForShiftSelected = [
+  //isShiftSelected === true
+  const setVisibilityForInvF = [
     "inv(sin(x))",
     "inv(cos(x))",
     "inv(tan(x))",
@@ -466,14 +596,34 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     "inv(cot(x))",
   ];
 
-  //actions.payload === false
-  const setVisibilityForShiftUnSelected = [
+  //isShiftSelected === false
+  const setVisibilityForF = [
     "sin(x)",
     "cos(x)",
     "tan(x)",
     "cosec(x)",
     "sec(x)",
     "cot(x)",
+  ];
+
+  //isHypSelected === true
+  const setVisibilityForInvH = [
+    "inv(sinh(x))",
+    "inv(cosh(x))",
+    "inv(tanh(x))",
+    "inv(cosech(x))",
+    "inv(sech(x))",
+    "inv(coth(x))",
+  ];
+
+  //isHypSelected === false
+  const setVisibilityForH = [
+    "sinh(x)",
+    "cosh(x)",
+    "tanh(x)",
+    "cosech(x)",
+    "sech(x)",
+    "coth(x)",
   ];
 
   function setVisibility(mText: string) {
@@ -485,12 +635,64 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       !buttonKeyPlaceHolder[indexOfItem].isVisible;
   }
 
-  if (!isShiftSelected) {
-    setVisibilityForShiftSelected.forEach((mText) => {
+  if (!isShiftSelected && !isHypSelected) {
+    //make inv(f) invisible
+    setVisibilityForInvF.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make hyp(f) invisible
+    setVisibilityForH.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make inv(hyp(f)) invisible
+    setVisibilityForInvH.forEach((mText) => {
+      setVisibility(mText);
+    });
+  } else if (isShiftSelected && isHypSelected) {
+    //make inv(f) invisible
+    setVisibilityForInvF.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make hyp(f) invisible
+    setVisibilityForH.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make inv(hyp(f)) invisible
+    setVisibilityForF.forEach((mText) => {
+      setVisibility(mText);
+    });
+  } else if (!isShiftSelected && isHypSelected) {
+    //make inv(f) invisible
+    setVisibilityForInvF.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make hyp(f) invisible
+    setVisibilityForF.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make inv(hyp(f)) invisible
+    setVisibilityForInvH.forEach((mText) => {
       setVisibility(mText);
     });
   } else {
-    setVisibilityForShiftUnSelected.forEach((mText) => {
+    //make inv(f) invisible
+    setVisibilityForH.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make hyp(f) invisible
+    setVisibilityForF.forEach((mText) => {
+      setVisibility(mText);
+    });
+
+    //make inv(hyp(f)) invisible
+    setVisibilityForInvH.forEach((mText) => {
       setVisibility(mText);
     });
   }
@@ -518,6 +720,7 @@ export type ButtonKeyType = {
 type CalculatorState = {
   screenText: string;
   isShiftSelected: boolean;
+  isHypSelected: boolean;
   buttonKeys: ButtonKeyType[];
 };
 
@@ -525,7 +728,11 @@ type CalculatorState = {
 const initialState: CalculatorState = {
   screenText: "0",
   isShiftSelected: initialIsShiftSelectedState,
-  buttonKeys: getButtonKeysOnShift(initialIsShiftSelectedState),
+  isHypSelected: initialIsHypSelectedState,
+  buttonKeys: getButtonKeysOnShift(
+    initialIsShiftSelectedState,
+    initialIsHypSelectedState
+  ),
 };
 
 export const calculatorSlice = createSlice({
@@ -648,7 +855,21 @@ export const calculatorSlice = createSlice({
             //toogle keys on shift
             state.isShiftSelected = !state.isShiftSelected;
 
-            state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
+            state.buttonKeys = getButtonKeysOnShift(
+              state.isShiftSelected,
+              state.isHypSelected
+            );
+
+            break;
+          }
+          case "hyp": {
+            //toogle keys on shift
+            state.isHypSelected = !state.isHypSelected;
+
+            state.buttonKeys = getButtonKeysOnShift(
+              state.isShiftSelected,
+              state.isHypSelected
+            );
 
             break;
           }

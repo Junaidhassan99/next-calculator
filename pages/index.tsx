@@ -15,7 +15,7 @@ const Home = () => {
     <div
       className={`${classes["calculator-page-body"]} ${classes["calculator-page-container"]}`}
     >
-      <div className={classes['screen-style']}>
+      <div className={classes["screen-style"]}>
         <CalculatorScreen />
       </div>
       <div className={classes["button-container"]}>
@@ -23,7 +23,7 @@ const Home = () => {
           <div
             className={`${classes["button-container-grid"]} ${classes["button-container-grid-top"]}`}
           >
-            {calculatorSelector.buttonKeys.slice(0, 22).map((item) => (
+            {calculatorSelector.buttonKeys.slice(0, 34).map((item) => (
               <CalclatorButton key={item.text} buttonKey={item} />
             ))}
           </div>
@@ -31,7 +31,7 @@ const Home = () => {
             className={`${classes["button-container-grid"]} ${classes["button-container-grid-bottom"]}`}
           >
             {calculatorSelector.buttonKeys
-              .slice(31, calculatorSelector.buttonKeys.length)
+              .slice(43, calculatorSelector.buttonKeys.length)
               .map((item) => (
                 <CalclatorButton key={item.text} buttonKey={item} />
               ))}
@@ -46,7 +46,7 @@ const Home = () => {
               classes["button-container-grid-right-shift"]
             }`}
           >
-            {calculatorSelector.buttonKeys.slice(20, 31).map((item) => (
+            {calculatorSelector.buttonKeys.slice(34, 43).map((item) => (
               <CalclatorButton key={item.text} buttonKey={item} />
             ))}
           </div>

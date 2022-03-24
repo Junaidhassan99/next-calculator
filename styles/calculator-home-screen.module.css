@@ -38,11 +38,11 @@
 
 .button-container-grid-right {
   grid-template-columns: repeat(1, 80%);
-  grid-template-rows: repeat(12, 8.4%);
+  grid-template-rows: repeat(12, 10%);
   grid-gap: 0.85% 0.6%;
 }
 
-.button-container-grid-right-shift{
+.button-container-grid-right-shift {
   grid-template-columns: repeat(1, 100%);
 }
 
@@ -53,7 +53,6 @@
   text-overflow: ellipsis;
 
   padding: 2.5%;
-  
 }
 
 .double-row-size {
@@ -68,9 +67,9 @@
   font-size: 3rem;
 }
 
-.screen-style{
+.screen-style {
   white-space: nowrap;
-  overflow-y : auto;
+  overflow-y: auto;
   margin: 1%;
   margin-right: 5%;
 }
