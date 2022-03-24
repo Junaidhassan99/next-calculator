@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { stat } from "fs";
 import { RootState } from "./store";
 
+//import { getDefaultMiddleware } from '@reduxjs/toolkit';
+
 const initialIsShiftSelectedState = false;
 
 enum ButtonKind {
@@ -18,6 +20,16 @@ enum ButtonKind {
   Constant,
 }
 
+function factorialize(num: number) {
+  var result = num;
+  if (num === 0 || num === 1) return 1;
+  while (num > 1) {
+    num--;
+    result *= num;
+  }
+  return result;
+}
+
 function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
@@ -25,18 +37,30 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.sin(input[0]);
+        //uk
+      },
     },
     {
       text: "inv(sin(x))",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "cosec(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.sin(input[0]);
+        //uk
+      },
     },
 
     {
@@ -44,24 +68,40 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "cos(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.cos(input[0]);
+        //uk
+      },
     },
     {
       text: "inv(cos(x))",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "sec(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.cos(input[0]);
+        //uk
+      },
     },
 
     {
@@ -69,6 +109,10 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
 
     {
@@ -76,6 +120,10 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.tan(input[0]);
+        //uk
+      },
     },
 
     {
@@ -83,12 +131,20 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "cot(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.tan(input[0]);
+        //uk
+      },
     },
 
     {
@@ -96,78 +152,127 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "^2",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.pow(input[0], 2);
+      },
     },
     {
       text: "^3",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.pow(input[0], 3);
+      },
     },
     {
       text: "inv(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / input[0];
+        //uk
+      },
     },
     {
       text: "!",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return factorialize(input[0]);
+        //uk
+      },
     },
     {
       text: "log(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.log10(input[0]);
+        //uk
+      },
     },
     {
       text: "10^(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.pow(10, input[0]);
+        //uk
+      },
     },
     {
       text: "ln(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.log(input[0]);
+        //uk
+      },
     },
     {
       text: "e^(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.pow(Math.E, input[0]);
+        //uk
+      },
     },
     {
       text: "abs(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.abs(input[0]);
+        //uk
+      },
     },
     {
       text: "hyp(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
     },
     {
       text: "sqrt(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return Math.sqrt(input[0]);
+        //uk
+      },
     },
     {
       text: "^",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return Math.pow(input[0], input[1]);
+      },
     },
 
     {
@@ -226,6 +331,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isVisible: true,
       isHeightDouble: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] % input[1];
+      },
     },
     {
       text: "7",
@@ -253,6 +361,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] / input[1];
+      },
     },
     {
       text: "4",
@@ -280,6 +391,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] * input[1];
+      },
     },
     {
       text: "1",
@@ -307,6 +421,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] - input[1];
+      },
     },
     {
       text: "0",
@@ -333,6 +450,9 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] + input[1];
+      },
     },
   ];
 
@@ -390,6 +510,8 @@ export type ButtonKeyType = {
   isHeightDouble?: boolean;
   allowBackSpace?: boolean;
   constantValue?: number;
+  calculateResult?: (input: number[]) => number;
+  //calculateResult?: () => void;
 };
 
 // Define a type for the slice state
@@ -433,6 +555,7 @@ export const calculatorSlice = createSlice({
       }
 
       function calculateOperatorResult() {
+        let result = 0.0;
         if (isNaN(+state.screenText)) {
           //two inputs
           const operator = getOperatorKeys().filter((v) =>
@@ -449,13 +572,29 @@ export const calculatorSlice = createSlice({
           );
 
           console.log(`a: ${a} b: ${b} operator: ${operator}`);
+
+          const mItem = state.buttonKeys.find((item) => item.text === operator);
+
+          if (mItem?.calculateResult !== undefined) {
+            result = mItem?.calculateResult([+a, +b]);
+          }
         } else {
           //one input
 
           const n = state.screenText;
 
           console.log(`n: ${n}`);
+
+          const mItem = state.buttonKeys.find(
+            (item) => item.text === actions.payload.text
+          );
+
+          if (mItem?.calculateResult !== undefined) {
+            result = mItem?.calculateResult([+n]);
+          }
         }
+
+        return result;
       }
 
       if (actions.payload.buttonKind === ButtonKind.Number) {
@@ -485,7 +624,9 @@ export const calculatorSlice = createSlice({
           state.screenText += actions.payload.text;
         } else {
           //calculate operator result
-          calculateOperatorResult();
+          state.screenText = `${calculateOperatorResult()}${
+            actions.payload.text
+          }`;
         }
       } else if (
         actions.payload.buttonKind === ButtonKind.Constant &&
@@ -498,7 +639,7 @@ export const calculatorSlice = createSlice({
         }
       } else if (actions.payload.buttonKind === ButtonKind.Function) {
         //calculate operator result
-        calculateOperatorResult();
+        state.screenText = calculateOperatorResult().toString();
 
         //then perform function operation here
       } else if (actions.payload.buttonKind === ButtonKind.ScreenOperation) {
@@ -548,7 +689,7 @@ export const calculatorSlice = createSlice({
           }
           case "=": {
             //calculate operator result
-            calculateOperatorResult();
+            state.screenText = calculateOperatorResult().toString();
 
             break;
           }

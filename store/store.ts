@@ -6,6 +6,7 @@ const store = configureStore({
   reducer: {
     calculator: calculatorReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export default store;
