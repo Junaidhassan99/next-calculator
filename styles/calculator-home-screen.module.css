@@ -28,22 +28,22 @@
 
 .button-container-grid-top {
   grid-template-columns: repeat(4, 24.4%);
-  grid-template-rows: repeat(4, 22.5%);
+  grid-template-rows: repeat(4, 23%);
 }
 
 .button-container-grid-bottom {
   grid-template-columns: repeat(4, 24.4%);
-  grid-template-rows: repeat(5, 50%);
+  grid-template-rows: repeat(4, 50%);
 }
 
 .button-container-grid-right {
   grid-template-columns: repeat(1, 80%);
-  grid-template-rows: repeat(12, 8%);
-  grid-row-gap: 1.23%;
+  grid-template-rows: repeat(12, 8.4%);
+  grid-gap: 0.85% 0.6%;
 }
 
 .button-container-grid-right-shift{
-  grid-template-columns: repeat(1, 95%);
+  grid-template-columns: repeat(1, 100%);
 }
 
 .button-item {

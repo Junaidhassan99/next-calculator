@@ -245,16 +245,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
         //uk
       },
     },
-    {
-      text: "hyp(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
+
     {
       text: "sqrt(x)",
       isActive: true,
@@ -274,18 +265,36 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
         return Math.pow(input[0], input[1]);
       },
     },
-
     {
-      text: "backspace",
+      text: "%",
       isActive: true,
       isVisible: true,
-      isHeightDouble: true,
-      buttonKind: ButtonKind.ScreenOperation,
+      buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return input[0] % input[1];
+      },
     },
     {
       text: "shift",
       isActive: true,
       isVisible: true,
+      buttonKind: ButtonKind.ScreenOperation,
+    },
+    {
+      text: "hyp",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.ScreenOperation,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "backspace",
+      isActive: true,
+      isVisible: true,
+      isHeightDouble: true,
       buttonKind: ButtonKind.ScreenOperation,
     },
     {
@@ -325,16 +334,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
     //   isActive: true,
     //   isVisible: true,
     // },
-    {
-      text: "%",
-      isActive: true,
-      isVisible: true,
-      isHeightDouble: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] % input[1];
-      },
-    },
+
     {
       text: "7",
       isActive: true,
