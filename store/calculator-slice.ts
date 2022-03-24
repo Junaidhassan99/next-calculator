@@ -12,7 +12,8 @@ enum ButtonKind {
   //has two inputs and one output
   Operator,
   //special operations and show nothing on the screen eg: backspace
-  None,
+  //can be renamed to screen operation
+  ScreenOperation,
   //constants
   Constant,
 }
@@ -174,25 +175,25 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       isActive: true,
       isVisible: true,
       isHeightDouble: true,
-      buttonKind: ButtonKind.None,
+      buttonKind: ButtonKind.ScreenOperation,
     },
     {
       text: "shift",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.None,
+      buttonKind: ButtonKind.ScreenOperation,
     },
     {
       text: "CE",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.None,
+      buttonKind: ButtonKind.ScreenOperation,
     },
     {
       text: "C",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.None,
+      buttonKind: ButtonKind.ScreenOperation,
     },
     {
       text: "pi",
@@ -325,7 +326,7 @@ function getButtonKeysOnShift(isShiftSelected: boolean): ButtonKeyType[] {
       text: "=",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.None,
+      buttonKind: ButtonKind.ScreenOperation,
     },
     {
       text: "+",
@@ -417,12 +418,7 @@ export const calculatorSlice = createSlice({
       state.buttonKeys[indexToUpdate].isActive =
         !state.buttonKeys[indexToUpdate].isActive;
     },
-    onShiftClick(state) {
-      state.isShiftSelected = !state.isShiftSelected;
-
-      state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
-    },
-    addTextToScreen(state, actions: PayloadAction<ButtonKeyType>) {
+    handlerForKeys(state, actions: PayloadAction<ButtonKeyType>) {
       function getOperatorKeys() {
         let operators: string[] = [];
 
@@ -497,47 +493,67 @@ export const calculatorSlice = createSlice({
           //calculate operator result
           calculateOperatorResult();
         }
+      } else if (actions.payload.buttonKind === ButtonKind.ScreenOperation) {
+        switch (actions.payload.text) {
+          case "shift": {
+            //toogle keys on shift
+            state.isShiftSelected = !state.isShiftSelected;
+
+            state.buttonKeys = getButtonKeysOnShift(state.isShiftSelected);
+
+            break;
+          }
+          case "backspace": {
+            //remove last character
+            state.buttonKeys.forEach((item) => {
+              if (state.screenText.endsWith(item.text) && item.allowBackSpace) {
+                state.screenText = state.screenText.slice(0, -item.text.length);
+
+                if (state.screenText.length === 0) {
+                  state.screenText = "0";
+                }
+              }
+            });
+
+            break;
+          }
+          case "CE": {
+            //removes last number
+            const matches = state.screenText.match(/\d+$/);
+
+            if (matches !== null) {
+              state.screenText = state.screenText.slice(0, -matches[0].length);
+            }
+
+            if (state.screenText.length === 0) {
+              state.screenText = "0";
+            }
+
+            break;
+          }
+          case "C": {
+            //clear everything on screen
+
+            state.screenText = "0";
+
+            break;
+          }
+          case "=": {
+            //calculate result
+
+            break;
+          }
+          default: {
+            //do nothing
+            break;
+          }
+        }
       } else {
         //do nothing or handle none type later
       }
     },
-    removeFromScreen(state) {
-      state.buttonKeys.forEach((item) => {
-        if (state.screenText.endsWith(item.text) && item.allowBackSpace) {
-          state.screenText = state.screenText.slice(0, -item.text.length);
-
-          if (state.screenText.length === 0) {
-            state.screenText = "0";
-          }
-        }
-      });
-    },
-    clearLastNumber(state) {
-      //CE
-      const matches = state.screenText.match(/\d+$/);
-
-      if (matches !== null) {
-        state.screenText = state.screenText.slice(0, -matches[0].length);
-      }
-
-      if (state.screenText.length === 0) {
-        state.screenText = "0";
-      }
-    },
-    clearScreen(state) {
-      //C
-
-      state.screenText = "0";
-    },
   },
 });
 
-export const {
-  setAvalibility,
-  onShiftClick,
-  addTextToScreen,
-  removeFromScreen,
-  clearLastNumber,
-  clearScreen,
-} = calculatorSlice.actions;
+export const { setAvalibility, handlerForKeys } = calculatorSlice.actions;
 export default calculatorSlice.reducer;

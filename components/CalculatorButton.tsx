@@ -1,13 +1,6 @@
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 
-import {
-  ButtonKeyType,
-  onShiftClick,
-  addTextToScreen,
-  removeFromScreen,
-  clearLastNumber,
-  clearScreen,
-} from "../store/calculator-slice";
+import { ButtonKeyType, handlerForKeys } from "../store/calculator-slice";
 
 import classes from "../styles/calculator-home-screen.module.css";
 import { Fragment } from "react";
@@ -18,29 +11,7 @@ const CalclatorButton: React.FC<{
   const calculatorDispatch = useAppDispatch();
 
   function buttonClickHandler() {
-    //None type is handled here
-    switch (buttonKey.text) {
-      case "shift": {
-        calculatorDispatch(onShiftClick());
-        break;
-      }
-      case "backspace": {
-        calculatorDispatch(removeFromScreen());
-        break;
-      }
-      case "CE": {
-        calculatorDispatch(clearLastNumber());
-        break;
-      }
-      case "C": {
-        calculatorDispatch(clearScreen());
-        break;
-      }
-      default: {
-        calculatorDispatch(addTextToScreen(buttonKey));
-        break;
-      }
-    }
+    calculatorDispatch(handlerForKeys(buttonKey));
   }
 
   return (
