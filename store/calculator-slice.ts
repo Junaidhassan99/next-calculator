@@ -433,20 +433,29 @@ export const calculatorSlice = createSlice({
       }
 
       function calculateOperatorResult() {
-        const operatorOnScreen = getOperatorKeys().filter((v) =>
-          state.screenText.includes(v)
-        )[0];
+        if (isNaN(+state.screenText)) {
+          //two inputs
+          const operator = getOperatorKeys().filter((v) =>
+            state.screenText.includes(v)
+          )[0];
 
-        const a = state.screenText.substring(
-          0,
-          state.screenText.indexOf(operatorOnScreen)
-        );
+          const a = state.screenText.substring(
+            0,
+            state.screenText.indexOf(operator)
+          );
 
-        const b = state.screenText.substring(
-          state.screenText.indexOf(operatorOnScreen) + 1
-        );
+          const b = state.screenText.substring(
+            state.screenText.indexOf(operator) + 1
+          );
 
-        console.log(`a: ${a} b: ${b} operator: ${operatorOnScreen}`);
+          console.log(`a: ${a} b: ${b} operator: ${operator}`);
+        } else {
+          //one input
+
+          const n = state.screenText;
+
+          console.log(`n: ${n}`);
+        }
       }
 
       if (actions.payload.buttonKind === ButtonKind.Number) {
@@ -472,6 +481,7 @@ export const calculatorSlice = createSlice({
         }
       } else if (actions.payload.buttonKind === ButtonKind.Operator) {
         if (!getOperatorKeys().some((v) => state.screenText.includes(v))) {
+          //if there is no operator already used
           state.screenText += actions.payload.text;
         } else {
           //calculate operator result
@@ -487,12 +497,10 @@ export const calculatorSlice = createSlice({
           state.screenText += actions.payload.constantValue.toString();
         }
       } else if (actions.payload.buttonKind === ButtonKind.Function) {
-        if (!isNaN(+state.screenText)) {
-          //it is a single number, so apply function directly
-        } else {
-          //calculate operator result
-          calculateOperatorResult();
-        }
+        //calculate operator result
+        calculateOperatorResult();
+
+        //then perform function operation here
       } else if (actions.payload.buttonKind === ButtonKind.ScreenOperation) {
         switch (actions.payload.text) {
           case "shift": {
@@ -539,7 +547,8 @@ export const calculatorSlice = createSlice({
             break;
           }
           case "=": {
-            //calculate result
+            //calculate operator result
+            calculateOperatorResult();
 
             break;
           }
