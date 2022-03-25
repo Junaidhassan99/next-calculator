@@ -159,44 +159,12 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "sec(x)",
+      text: "inv(x)",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 1 / Math.cos(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(sec(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "sech(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.cos(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(sech(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
+        return 1 / input[0];
         //uk
       },
     },
@@ -285,6 +253,58 @@ function getButtonKeysOnShift(
       },
     },
     {
+      text: "sec(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.cos(input[0]);
+        //uk
+      },
+    },
+
+    {
+      text: "inv(sec(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "sech(x)",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 1 / Math.cos(input[0]);
+        //uk
+      },
+    },
+
+    {
+      text: "inv(sech(x))",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return 0.0;
+        //uk
+      },
+    },
+    {
+      text: "!",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return factorialize(input[0]);
+        //uk
+      },
+    },
+    {
       text: "^2",
       isActive: true,
       isVisible: true,
@@ -302,26 +322,7 @@ function getButtonKeysOnShift(
         return Math.pow(input[0], 3);
       },
     },
-    {
-      text: "inv(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / input[0];
-        //uk
-      },
-    },
-    {
-      text: "!",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return factorialize(input[0]);
-        //uk
-      },
-    },
+
     {
       text: "log(x)",
       isActive: true,
