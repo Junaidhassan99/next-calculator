@@ -31,562 +31,562 @@ function factorialize(num: number) {
   return result;
 }
 
+export let buttonKeyPlaceHolder: ButtonKeyType[] = [
+  {
+    text: "sin(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.sin(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "inv(sin(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "sinh(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.sin(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "inv(sinh(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "cosec(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.sin(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(cosec(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "cosech(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.sin(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(cosech(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "cos(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.cos(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "inv(cos(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "cosh(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.cos(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "inv(cosh(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "inv(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / input[0];
+      //uk
+    },
+  },
+  {
+    text: "tan(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.tan(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(tan(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "tanh(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.tan(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(tanh(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "cot(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.tan(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(cot(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "coth(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.tan(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(coth(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "sec(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.cos(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(sec(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "sech(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 1 / Math.cos(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "inv(sech(x))",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+  },
+  {
+    text: "!",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return factorialize(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "^2",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.pow(input[0], 2);
+    },
+  },
+  {
+    text: "^3",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.pow(input[0], 3);
+    },
+  },
+
+  {
+    text: "log(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.log10(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "10^(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.pow(10, input[0]);
+      //uk
+    },
+  },
+  {
+    text: "ln(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.log(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "e^(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.pow(Math.E, input[0]);
+      //uk
+    },
+  },
+  {
+    text: "abs(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.abs(input[0]);
+      //uk
+    },
+  },
+
+  {
+    text: "sqrt(x)",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Function,
+    calculateResult: (input: number[]) => {
+      return Math.sqrt(input[0]);
+      //uk
+    },
+  },
+  {
+    text: "^",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return Math.pow(input[0], input[1]);
+    },
+  },
+  {
+    text: "%",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return input[0] % input[1];
+    },
+  },
+  {
+    text: "backspace",
+    isActive: true,
+    isVisible: true,
+    isHeightDouble: true,
+    buttonKind: ButtonKind.ScreenOperation,
+  },
+  {
+    text: "shift",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.ScreenOperation,
+    isHeightDouble: true,
+  },
+  {
+    text: "hyp",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.ScreenOperation,
+    calculateResult: (input: number[]) => {
+      return 0.0;
+      //uk
+    },
+    isHeightDouble: true,
+  },
+
+  {
+    text: "CE",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.ScreenOperation,
+  },
+  {
+    text: "C",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.ScreenOperation,
+  },
+  {
+    text: "pi",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Constant,
+    constantValue: Math.PI,
+  },
+  {
+    text: "e",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Constant,
+    constantValue: Math.E,
+  },
+
+  // {
+  //   text: "(",
+  //   isActive: true,
+  //   isVisible: true,
+  // },
+  // {
+  //   text: ")",
+  //   isActive: true,
+  //   isVisible: true,
+  // },
+
+  {
+    text: "7",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "8",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "9",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "/",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return input[0] / input[1];
+    },
+  },
+  {
+    text: "4",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "5",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "6",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "*",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return input[0] * input[1];
+    },
+  },
+  {
+    text: "1",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "2",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "3",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "-",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return input[0] - input[1];
+    },
+  },
+  {
+    text: "0",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: ".",
+    isActive: true,
+    isVisible: true,
+    allowBackSpace: true,
+    buttonKind: ButtonKind.Number,
+  },
+  {
+    text: "=",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.ScreenOperation,
+  },
+  {
+    text: "+",
+    isActive: true,
+    isVisible: true,
+    buttonKind: ButtonKind.Operator,
+    calculateResult: (input: number[]) => {
+      return input[0] + input[1];
+    },
+  },
+];
+
 function getButtonKeysOnShift(
   isShiftSelected: boolean,
   isHypSelected: boolean
 ): ButtonKeyType[] {
-  let buttonKeyPlaceHolder: ButtonKeyType[] = [
-    {
-      text: "sin(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.sin(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "inv(sin(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "sinh(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.sin(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "inv(sinh(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "cosec(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.sin(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(cosec(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "cosech(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.sin(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(cosech(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "cos(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.cos(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "inv(cos(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "cosh(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.cos(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "inv(cosh(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "inv(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / input[0];
-        //uk
-      },
-    },
-    {
-      text: "tan(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.tan(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(tan(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "tanh(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.tan(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(tanh(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "cot(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.tan(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(cot(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "coth(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.tan(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(coth(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "sec(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.cos(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(sec(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "sech(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 1 / Math.cos(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "inv(sech(x))",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-    },
-    {
-      text: "!",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return factorialize(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "^2",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.pow(input[0], 2);
-      },
-    },
-    {
-      text: "^3",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.pow(input[0], 3);
-      },
-    },
-
-    {
-      text: "log(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.log10(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "10^(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.pow(10, input[0]);
-        //uk
-      },
-    },
-    {
-      text: "ln(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.log(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "e^(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.pow(Math.E, input[0]);
-        //uk
-      },
-    },
-    {
-      text: "abs(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.abs(input[0]);
-        //uk
-      },
-    },
-
-    {
-      text: "sqrt(x)",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Function,
-      calculateResult: (input: number[]) => {
-        return Math.sqrt(input[0]);
-        //uk
-      },
-    },
-    {
-      text: "^",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return Math.pow(input[0], input[1]);
-      },
-    },
-    {
-      text: "%",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] % input[1];
-      },
-    },
-    {
-      text: "backspace",
-      isActive: true,
-      isVisible: true,
-      isHeightDouble: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
-    {
-      text: "shift",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-      isHeightDouble: true,
-    },
-    {
-      text: "hyp",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-      calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
-      },
-      isHeightDouble: true,
-    },
-
-    {
-      text: "CE",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
-    {
-      text: "C",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
-    {
-      text: "pi",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Constant,
-      constantValue: Math.PI,
-    },
-    {
-      text: "e",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Constant,
-      constantValue: Math.E,
-    },
-
-    // {
-    //   text: "(",
-    //   isActive: true,
-    //   isVisible: true,
-    // },
-    // {
-    //   text: ")",
-    //   isActive: true,
-    //   isVisible: true,
-    // },
-
-    {
-      text: "7",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "8",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "9",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "/",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] / input[1];
-      },
-    },
-    {
-      text: "4",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "5",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "6",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "*",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] * input[1];
-      },
-    },
-    {
-      text: "1",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "2",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "3",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "-",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] - input[1];
-      },
-    },
-    {
-      text: "0",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: ".",
-      isActive: true,
-      isVisible: true,
-      allowBackSpace: true,
-      buttonKind: ButtonKind.Number,
-    },
-    {
-      text: "=",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
-    {
-      text: "+",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] + input[1];
-      },
-    },
-  ];
-
   //isShiftSelected === true
   const setVisibilityForInvF = [
     "inv(sin(x))",
@@ -740,6 +740,9 @@ export const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
+    updateScreenText(state, action: PayloadAction<string>) {
+      state.screenText = action.payload;
+    },
     setAvalibility(state, actions: PayloadAction<string>) {
       const indexToUpdate = state.buttonKeys
         .map((items) => items.text)
@@ -927,5 +930,5 @@ export const calculatorSlice = createSlice({
   },
 });
 
-export const { setAvalibility, handlerForKeys } = calculatorSlice.actions;
+export const { setAvalibility, handlerForKeys,updateScreenText } = calculatorSlice.actions;
 export default calculatorSlice.reducer;

@@ -15,7 +15,7 @@ const Home = () => {
     <div
       className={`${classes["calculator-page-body"]} ${classes["calculator-page-container"]}`}
     >
-      <div className={classes["screen-style"]}>
+      <div>
         <CalculatorScreen />
       </div>
       <div className={classes["button-container"]}>
