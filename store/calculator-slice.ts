@@ -808,22 +808,26 @@ export const calculatorSlice = createSlice({
         return result;
       }
 
+      function getLastNumberFromScreen() {
+        const operatorOnScreen = getOperatorKeys().filter((v) =>
+          state.screenText.includes(v)
+        )[0];
+
+        const lastNumberWithPoint =
+          operatorOnScreen === undefined
+            ? state.screenText
+            : state.screenText.substring(
+                state.screenText.indexOf(operatorOnScreen) + 1
+              );
+
+        return lastNumberWithPoint;
+      }
+
       if (actions.payload.buttonKind === ButtonKind.Number) {
         if (state.screenText === "0" && actions.payload.text !== ".") {
           state.screenText = actions.payload.text;
         } else if (actions.payload.text === ".") {
-          const operatorOnScreen = getOperatorKeys().filter((v) =>
-            state.screenText.includes(v)
-          )[0];
-
-          const lastNumberWithPoint =
-            operatorOnScreen === undefined
-              ? state.screenText
-              : state.screenText.substring(
-                  state.screenText.indexOf(operatorOnScreen) + 1
-                );
-
-          if (!lastNumberWithPoint.includes(".")) {
+          if (!getLastNumberFromScreen().includes(".")) {
             state.screenText += actions.payload.text;
           }
         } else {
@@ -846,7 +850,9 @@ export const calculatorSlice = createSlice({
         if (state.screenText === "0") {
           state.screenText = actions.payload.constantValue.toString();
         } else {
-          state.screenText += actions.payload.constantValue.toString();
+          if (!getLastNumberFromScreen().includes(".")) {
+            state.screenText += actions.payload.constantValue.toString();
+          }
         }
       } else if (actions.payload.buttonKind === ButtonKind.Function) {
         //calculate operator result
