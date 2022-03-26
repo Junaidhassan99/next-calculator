@@ -1,9 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  buttonKeyPlaceHolder,
-  handlerForKeys,
-  updateScreenText,
-} from "../store/calculator-slice";
+import { handlerForKeys, updateScreenText } from "../store/calculator-slice";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 import classes from "../styles/calculator-home-screen.module.css";
@@ -11,6 +7,10 @@ import classes from "../styles/calculator-home-screen.module.css";
 const CalculatorScreen = () => {
   const calculatorSelector = useAppSelector(
     (state) => state.calculator.screenText
+  );
+
+  const buttonKeysSelector = useAppSelector(
+    (state) => state.calculator.buttonKeys
   );
 
   const calculatorDispatch = useAppDispatch();
@@ -40,7 +40,7 @@ const CalculatorScreen = () => {
     ];
 
     function getButtonKeyForText(keyText: string) {
-      return buttonKeyPlaceHolder.find((x) => x.text === keyText)!;
+      return buttonKeysSelector.find((x) => x.text === keyText)!;
     }
 
     eventKey.preventDefault();
@@ -74,7 +74,7 @@ const CalculatorScreen = () => {
   }, [calculatorSelector]);
 
   return (
-    <div className={classes['calculator-screen-parent']} ref={parentRef}>
+    <div className={classes["calculator-screen-parent"]} ref={parentRef}>
       <input
         className={classes["calculator-screen"]}
         type="text"
