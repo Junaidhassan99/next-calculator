@@ -11,6 +11,7 @@ const Home = () => {
   const calculatorSelector = useAppSelector((state) => state.calculator);
   const calculatorDispatch = useAppDispatch();
 
+
   return (
     <div
       className={`${classes["calculator-page-body"]} ${classes["calculator-page-container"]}`}

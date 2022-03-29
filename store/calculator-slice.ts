@@ -37,7 +37,7 @@ function getButtonKeysOnShift(
 ): ButtonKeyType[] {
   let buttonKeyPlaceHolder: ButtonKeyType[] = [
     {
-      text: "sin(x)",
+      text: "sin",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -47,7 +47,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "inv(sin(x))",
+      text: "sin-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -57,7 +57,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "sinh(x)",
+      text: "sinh",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -67,7 +67,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "inv(sinh(x))",
+      text: "sinh-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -77,7 +77,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "cosec(x)",
+      text: "cosec",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -88,7 +88,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(cosec(x))",
+      text: "cosec-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -98,7 +98,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "cosech(x)",
+      text: "cosech",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -109,7 +109,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(cosech(x))",
+      text: "cosech-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -119,7 +119,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "cos(x)",
+      text: "cos",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -129,7 +129,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "inv(cos(x))",
+      text: "cos-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -139,7 +139,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "cosh(x)",
+      text: "cosh",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -149,7 +149,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "inv(cosh(x))",
+      text: "cosh-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -159,7 +159,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "inv(x)",
+      text: "inv",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -169,7 +169,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "tan(x)",
+      text: "tan",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -180,7 +180,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(tan(x))",
+      text: "tan-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -190,7 +190,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "tanh(x)",
+      text: "tanh",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -201,7 +201,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(tanh(x))",
+      text: "tanh-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -211,7 +211,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "cot(x)",
+      text: "cot",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -222,7 +222,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(cot(x))",
+      text: "cot-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -232,7 +232,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "coth(x)",
+      text: "coth",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -243,7 +243,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(coth(x))",
+      text: "coth-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -253,7 +253,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "sec(x)",
+      text: "sec",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -264,7 +264,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(sec(x))",
+      text: "sec-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -274,7 +274,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "sech(x)",
+      text: "sech",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -285,7 +285,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "inv(sech(x))",
+      text: "sech-1",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -324,7 +324,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "log(x)",
+      text: "log",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -334,7 +334,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "10^(x)",
+      text: "10^",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -344,7 +344,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "ln(x)",
+      text: "ln",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -354,7 +354,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "e^(x)",
+      text: "e^",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -364,7 +364,7 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "abs(x)",
+      text: "abs",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -375,7 +375,7 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "sqrt(x)",
+      text: "sqrt",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
@@ -589,42 +589,42 @@ function getButtonKeysOnShift(
 
   //isShiftSelected === true
   const setVisibilityForInvF = [
-    "inv(sin(x))",
-    "inv(cos(x))",
-    "inv(tan(x))",
-    "inv(cosec(x))",
-    "inv(sec(x))",
-    "inv(cot(x))",
+    "sin-1",
+    "cos-1",
+    "tan-1",
+    "cosec-1",
+    "sec-1",
+    "cot-1",
   ];
 
   //isShiftSelected === false
   const setVisibilityForF = [
-    "sin(x)",
-    "cos(x)",
-    "tan(x)",
-    "cosec(x)",
-    "sec(x)",
-    "cot(x)",
+    "sin",
+    "cos",
+    "tan",
+    "cosec",
+    "sec",
+    "cot",
   ];
 
   //isHypSelected === true
   const setVisibilityForInvH = [
-    "inv(sinh(x))",
-    "inv(cosh(x))",
-    "inv(tanh(x))",
-    "inv(cosech(x))",
-    "inv(sech(x))",
-    "inv(coth(x))",
+    "sinh-1",
+    "cosh-1",
+    "tanh-1",
+    "cosech-1",
+    "sech-1",
+    "coth-1",
   ];
 
   //isHypSelected === false
   const setVisibilityForH = [
-    "sinh(x)",
-    "cosh(x)",
-    "tanh(x)",
-    "cosech(x)",
-    "sech(x)",
-    "coth(x)",
+    "sinh",
+    "cosh",
+    "tanh",
+    "cosech",
+    "sech",
+    "coth",
   ];
 
   function setVisibility(mText: string) {
