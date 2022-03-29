@@ -57,7 +57,7 @@
 }
 
 .button-item-padding {
-  padding: 4px;
+  padding: 3px;
 }
 
 .inv-case-button-item-container {
@@ -89,14 +89,14 @@
 }
 
 /* medium screen */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   .button-item-padding {
     padding: 2px;
   }
 }
 
 /* small screen */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .button-item-padding {
     padding: 1px;
   }
