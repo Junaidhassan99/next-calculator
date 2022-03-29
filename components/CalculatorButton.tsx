@@ -10,6 +10,16 @@ const CalclatorButton: React.FC<{
 }> = ({ children, buttonKey }) => {
   const calculatorDispatch = useAppDispatch();
 
+  const isInv = buttonKey.text.endsWith("-1");
+
+  function removeInv() {
+    if (isInv) {
+      return buttonKey.text.substring(0, buttonKey.text.length - "-1".length);
+    } else {
+      return buttonKey.text;
+    }
+  }
+
   function buttonClickHandler() {
     calculatorDispatch(handlerForKeys(buttonKey));
   }
@@ -24,7 +34,14 @@ const CalclatorButton: React.FC<{
           }`}
           onClick={buttonClickHandler}
         >
-          {buttonKey.text}
+          <div
+            className={
+              isInv ? classes["inv-case-button-item-container"] : undefined
+            }
+          >
+            <div>{removeInv()}</div>
+            {isInv && <div className={classes["inv-case-button-item"]}>-1</div>}
+          </div>
         </button>
       ) : null}
     </Fragment>

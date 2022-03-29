@@ -55,6 +55,18 @@
   padding: 1.5%;
 }
 
+.inv-case-button-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.inv-case-button-item {
+  font-size: 1rem;
+  padding: 1%;
+}
+
 .double-row-size {
   grid-row-start: span 2;
 }
