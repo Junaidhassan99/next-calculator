@@ -35,9 +35,9 @@ const CalclatorButton: React.FC<{
           onClick={buttonClickHandler}
         >
           <div
-            className={
-              isInv ? classes["inv-case-button-item-container"] : undefined
-            }
+            className={`${classes["button-item-padding"]} ${
+              isInv && classes["inv-case-button-item-container"]
+            }`}
           >
             <div>{removeInv()}</div>
             {isInv && <div className={classes["inv-case-button-item"]}>-1</div>}

@@ -39,7 +39,7 @@
 .button-container-grid-right {
   grid-template-columns: repeat(1, 80%);
   grid-template-rows: repeat(12, 10.6%);
-  grid-gap: 0.85% 0.6%;
+  grid-gap: 0.8% 0.6%;
 }
 
 .button-container-grid-right-shift {
@@ -52,7 +52,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  padding: 1.5%;
+  /* padding: 1.5%; */
+
+}
+
+.button-item-padding {
+  padding: 4px;
 }
 
 .inv-case-button-item-container {
@@ -81,4 +86,18 @@
   text-align: right;
   font-size: 3rem;
   width: 100%;
+}
+
+/* medium screen */
+@media only screen and (max-width: 900px) {
+  .button-item-padding {
+    padding: 2px;
+  }
+}
+
+/* small screen */
+@media only screen and (max-width: 500px) {
+  .button-item-padding {
+    padding: 1px;
+  }
 }
