@@ -6,11 +6,11 @@ import { setAvalibility } from "../store/calculator-slice";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 import classes from "../styles/calculator-home-screen.module.css";
+// import "../styles/globals.css";
 
 const Home = () => {
   const calculatorSelector = useAppSelector((state) => state.calculator);
   const calculatorDispatch = useAppDispatch();
-
 
   return (
     <div

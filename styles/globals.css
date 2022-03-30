@@ -1,4 +1,22 @@
-.calculator-page-body {
+body {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+/* info: dark theme */
+
+body {
+  background-color: #18191a;
+}
+
+.dark-component {
+  color: #d8d8d8;
+  background-color: #3a3c3d;
+
+  border-width: 0px;
+}
+
+.dark-component:hover,
+.dark-component:focus {
+  background-color: #424446;
 }

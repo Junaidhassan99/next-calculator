@@ -29,7 +29,7 @@ const CalclatorButton: React.FC<{
       {buttonKey.isVisible ? (
         <button
           key={buttonKey.text}
-          className={`${classes["button-item"]} ${
+          className={`${classes["button-item"]} dark-component  ${
             buttonKey.isHeightDouble && classes["double-row-size"]
           }`}
           onClick={buttonClickHandler}

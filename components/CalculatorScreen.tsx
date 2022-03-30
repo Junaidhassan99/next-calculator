@@ -76,7 +76,7 @@ const CalculatorScreen = () => {
   return (
     <div className={classes["calculator-screen-parent"]} ref={parentRef}>
       <input
-        className={classes["calculator-screen"]}
+        className={`${classes["calculator-screen"]} dark-component`}
         type="text"
         value={calculatorSelector}
         ref={screenInputRef}
