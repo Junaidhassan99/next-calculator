@@ -4,7 +4,9 @@ import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 import classes from "../styles/calculator-home-screen.module.css";
 
-const CalculatorScreen = () => {
+const CalculatorScreen: React.FC<{
+  isShiftSelected: boolean;
+}> = ({ children, isShiftSelected }) => {
   const calculatorSelector = useAppSelector(
     (state) => state.calculator.screenText
   );
@@ -76,7 +78,9 @@ const CalculatorScreen = () => {
   return (
     <div className={classes["calculator-screen-parent"]} ref={parentRef}>
       <input
-        className={`${classes["calculator-screen"]} dark-component`}
+        className={`${
+          isShiftSelected && classes["calculator-screen-shift-h"]
+        } ${classes["calculator-screen"]} dark-component`}
         type="text"
         value={calculatorSelector}
         ref={screenInputRef}

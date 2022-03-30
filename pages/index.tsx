@@ -16,8 +16,10 @@ const Home = () => {
     <div
       className={`${classes["calculator-page-body"]} ${classes["calculator-page-container"]}`}
     >
-      <div>
-        <CalculatorScreen />
+      <div className="default-elevation">
+        <CalculatorScreen
+          isShiftSelected={calculatorSelector.isShiftSelected}
+        />
       </div>
       <div className={classes["button-container"]}>
         <div className={classes["button-container-flex-grow-left"]}>

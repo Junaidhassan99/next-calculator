@@ -53,6 +53,7 @@
 
 .button-item-padding {
   padding: 3px;
+  margin: 1px;
 }
 
 .inv-case-button-item-container {
@@ -83,6 +84,10 @@
   width: 97%;
 
   padding: 2%;
+}
+
+.calculator-screen-shift-h {
+  width: 102.3%;
 }
 
 /* medium screen */

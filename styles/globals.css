@@ -3,11 +3,19 @@ body {
   margin-right: 10%;
 }
 
+.default-elevation {
+  z-index: 2;
+}
+
 /* info: dark theme */
 
 body {
   background-color: #18191a;
 }
+
+/* body {
+  background-color: white;
+} */
 
 .dark-component {
   color: #d8d8d8;
