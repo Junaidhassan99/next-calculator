@@ -47,7 +47,7 @@ const CalculatorScreen: React.FC<{
 
     eventKey.preventDefault();
 
-    if (allowedKeys.includes(eventKey.key)) {
+    if (screen.width >= 500 && allowedKeys.includes(eventKey.key)) {
       if (eventKey.key === "Enter") {
         calculatorDispatch(handlerForKeys(getButtonKeyForText("=")));
       } else if (eventKey.key === "Backspace") {
