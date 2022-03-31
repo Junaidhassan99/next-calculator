@@ -103,3 +103,20 @@
     padding: 1px;
   }
 }
+
+/*small small screen */
+@media only screen and (max-width: 500px) {
+  .button-container-grid-top {
+    display: none;
+  }
+
+  .button-container-grid-bottom {
+    /* display: none; */
+    grid-template-columns: repeat(4, 28%);
+    grid-template-rows: repeat(4, 75%);
+  }
+
+  .button-container-grid-right {
+    display: none;
+  }
+}
