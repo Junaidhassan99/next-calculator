@@ -7,6 +7,11 @@ body {
   z-index: 2;
 }
 
+.default-border {
+  border-radius: 5px;
+  outline: none;
+}
+
 /* info: dark theme */
 
 body {
@@ -24,7 +29,25 @@ body {
   border-width: 0px;
 }
 
-.dark-component:hover,
 .dark-component:focus {
   background-color: #424446;
+}
+
+.dark-component-hover:hover {
+  background-color: #424446;
+}
+
+.dark-component-button-click:active {
+  background-color: #cf6679;
+}
+
+.dark-component-button-hold:hover {
+  background-color: #d47284;
+}
+
+/*info: focused because for the first time button styles are not assigned */
+.dark-component-button-hold:focus,
+/*info: if any other button is click button will loose its style so we have to do use this class without focus */
+.dark-component-button-hold {
+  background-color: #cf6679;
 }

@@ -11,6 +11,8 @@ const CalclatorButton: React.FC<{
 }> = ({ children, buttonKey }) => {
   const calculatorDispatch = useAppDispatch();
 
+  const keyHoldCheck = useAppSelector((state) => state.calculator);
+
   const isInv = buttonKey.text.endsWith("-1");
 
   function removeInv() {
@@ -25,6 +27,19 @@ const CalclatorButton: React.FC<{
     calculatorDispatch(handlerForKeys(buttonKey));
   }
 
+  function backgroundColorClassForKeyHold() {
+    if (
+      (keyHoldCheck.isHypSelected && buttonKey.text === "hyp") ||
+      (keyHoldCheck.isShiftSelected && buttonKey.text === "shift")
+    ) {
+      return "dark-component-button-hold";
+    } else {
+      return "dark-component-button-click dark-component-hover";
+    }
+  }
+
+  console.log(buttonKey.text);
+
   return (
     <Fragment>
       {buttonKey.isVisible ? (
@@ -32,7 +47,7 @@ const CalclatorButton: React.FC<{
           key={buttonKey.text}
           className={`${classes["button-item-padding"]} ${
             classes["button-item"]
-          } dark-component  ${
+          } ${backgroundColorClassForKeyHold()} default-border dark-component  ${
             buttonKey.isHeightDouble && classes["double-row-size"]
           }`}
           onClick={buttonClickHandler}
