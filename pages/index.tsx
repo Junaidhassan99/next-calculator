@@ -26,10 +26,19 @@ const Home = () => {
           <div
             className={`${classes["button-container-grid"]} ${classes["button-container-grid-top"]}`}
           >
-            {calculatorSelector.buttonKeys.slice(0, 34).map((item) => (
+            {calculatorSelector.buttonKeys.slice(0, 30).map((item) => (
               <CalclatorButton key={item.text} buttonKey={item} />
             ))}
           </div>
+
+          <div
+            className={`${classes["button-container-grid"]} ${classes["button-container-grid-middle"]}`}
+          >
+            {calculatorSelector.buttonKeys.slice(30, 34).map((item) => (
+              <CalclatorButton key={item.text} buttonKey={item} />
+            ))}
+          </div>
+
           <div
             className={`${classes["button-container-grid"]} ${classes["button-container-grid-bottom"]}`}
           >

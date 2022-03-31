@@ -23,7 +23,12 @@
 
 .button-container-grid-top {
   grid-template-columns: repeat(4, 24.4%);
-  grid-template-rows: repeat(4, 23%);
+  grid-template-rows: repeat(3, 31.5%);
+}
+
+.button-container-grid-middle{
+  grid-template-columns: repeat(4, 24.4%);
+  grid-template-rows: repeat(1, 94%);
 }
 
 .button-container-grid-bottom {
@@ -110,17 +115,25 @@
     display: none;
   }
 
+  .button-container-grid-middle{
+    grid-template-columns: repeat(4, 28%);
+  }
+
   .button-container-grid-bottom {
     /* display: none; */
     grid-template-columns: repeat(4, 28%);
-    grid-template-rows: repeat(4, 75%);
+    grid-template-rows: repeat(4, 70%);
   }
 
   .button-container-grid-right {
     display: none;
   }
 
+  .calculator-screen{
+    width: 105%;
+  }
+
   .calculator-screen-shift-h {
-    width: 97%;
+    width: 105%;
   }
 }
