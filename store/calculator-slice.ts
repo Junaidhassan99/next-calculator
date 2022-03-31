@@ -295,12 +295,12 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "!",
+      text: "ln",
       isActive: true,
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return factorialize(input[0]);
+        return Math.log(input[0]);
         //uk
       },
     },
@@ -343,14 +343,42 @@ function getButtonKeysOnShift(
         //uk
       },
     },
+
     {
-      text: "ln",
+      text: "backspace",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.Function,
+      //isHeightDouble: true,
+      buttonKind: ButtonKind.ScreenOperation,
+    },
+    {
+      text: "CE",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.ScreenOperation,
+    },
+    {
+      text: "C",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.ScreenOperation,
+    },
+    {
+      text: "%",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Operator,
       calculateResult: (input: number[]) => {
-        return Math.log(input[0]);
-        //uk
+        return input[0] % input[1];
+      },
+    },
+    {
+      text: "^",
+      isActive: true,
+      isVisible: true,
+      buttonKind: ButtonKind.Operator,
+      calculateResult: (input: number[]) => {
+        return Math.pow(input[0], input[1]);
       },
     },
     {
@@ -363,6 +391,7 @@ function getButtonKeysOnShift(
         //uk
       },
     },
+
     {
       text: "abs",
       isActive: true,
@@ -385,31 +414,6 @@ function getButtonKeysOnShift(
       },
     },
     {
-      text: "^",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return Math.pow(input[0], input[1]);
-      },
-    },
-    {
-      text: "%",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.Operator,
-      calculateResult: (input: number[]) => {
-        return input[0] % input[1];
-      },
-    },
-    {
-      text: "backspace",
-      isActive: true,
-      isVisible: true,
-      isHeightDouble: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
-    {
       text: "shift",
       isActive: true,
       isVisible: true,
@@ -429,17 +433,17 @@ function getButtonKeysOnShift(
     },
 
     {
-      text: "CE",
+      text: "!",
       isActive: true,
       isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
+      isHeightDouble: true,
+      buttonKind: ButtonKind.Function,
+      calculateResult: (input: number[]) => {
+        return factorialize(input[0]);
+        //uk
+      },
     },
-    {
-      text: "C",
-      isActive: true,
-      isVisible: true,
-      buttonKind: ButtonKind.ScreenOperation,
-    },
+
     {
       text: "pi",
       isActive: true,
@@ -598,14 +602,7 @@ function getButtonKeysOnShift(
   ];
 
   //isShiftSelected === false
-  const setVisibilityForF = [
-    "sin",
-    "cos",
-    "tan",
-    "cosec",
-    "sec",
-    "cot",
-  ];
+  const setVisibilityForF = ["sin", "cos", "tan", "cosec", "sec", "cot"];
 
   //isHypSelected === true
   const setVisibilityForInvH = [
@@ -618,14 +615,7 @@ function getButtonKeysOnShift(
   ];
 
   //isHypSelected === false
-  const setVisibilityForH = [
-    "sinh",
-    "cosh",
-    "tanh",
-    "cosech",
-    "sech",
-    "coth",
-  ];
+  const setVisibilityForH = ["sinh", "cosh", "tanh", "cosech", "sech", "coth"];
 
   function setVisibility(mText: string) {
     const indexOfItem = buttonKeyPlaceHolder
