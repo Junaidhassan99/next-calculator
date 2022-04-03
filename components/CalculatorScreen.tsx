@@ -80,7 +80,7 @@ const CalculatorScreen: React.FC<{
       <input
         className={`${
           isShiftSelected && "calculator-screen-shift-h"
-        } calculator-screen default-border dark-component`}
+        } calculator-screen default-border dark-component-text-color dark-component`}
         type="text"
         value={calculatorSelector}
         ref={screenInputRef}

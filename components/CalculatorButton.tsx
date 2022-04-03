@@ -36,7 +36,6 @@ const CalclatorButton: React.FC<{
     }
   }
 
-  console.log(buttonKey.text);
 
   return (
     <Fragment>
@@ -44,7 +43,7 @@ const CalclatorButton: React.FC<{
         <button
           key={buttonKey.text}
           className={`button-item-padding button-item
-          } ${backgroundColorClassForKeyHold()} default-border dark-component  ${
+          } ${backgroundColorClassForKeyHold()} default-border dark-component dark-component-text-color ${
             buttonKey.isHeightDouble && "double-row-size"
           }`}
           onClick={buttonClickHandler}

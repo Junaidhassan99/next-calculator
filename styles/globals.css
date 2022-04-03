@@ -1,4 +1,4 @@
-body {
+body .default-margin {
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -23,10 +23,14 @@ body {
 } */
 
 .dark-component {
-  color: #d8d8d8;
+  
   background-color: #3a3c3d;
 
   border-width: 0px;
+}
+
+.dark-component-text-color{
+  color: #d8d8d8;
 }
 
 .dark-component:focus {
@@ -37,7 +41,12 @@ body {
   background-color: #424446;
 }
 
-.dark-component-button-click:active {
+.dark-component-button-click:active,
+/*info: focused because for the first time button styles are not assigned */
+.dark-component-button-hold:focus,
+/*info: if any other button is click button will loose its style so we have to do use this class without focus */
+.dark-component-button-hold,
+.primary-background-color {
   background-color: #cf6679;
 }
 
@@ -45,9 +54,3 @@ body {
   background-color: #d47284;
 }
 
-/*info: focused because for the first time button styles are not assigned */
-.dark-component-button-hold:focus,
-/*info: if any other button is click button will loose its style so we have to do use this class without focus */
-.dark-component-button-hold {
-  background-color: #cf6679;
-}

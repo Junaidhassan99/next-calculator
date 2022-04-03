@@ -772,7 +772,6 @@ export const calculatorSlice = createSlice({
             state.screenText.indexOf(operator) + 1
           );
 
-          console.log(`a: ${a} b: ${b} operator: ${operator}`);
 
           const mItem = state.buttonKeys.find((item) => item.text === operator);
 
@@ -783,8 +782,6 @@ export const calculatorSlice = createSlice({
           //one input
 
           const n = state.screenText;
-
-          console.log(`n: ${n}`);
 
           const mItem = state.buttonKeys.find(
             (item) => item.text === actions.payload.text

@@ -10,7 +10,7 @@ import { useAppSelector, useAppDispatch } from "../store/hooks";
 // import classes from "../styles/calculator-home-screen.module.css";
 // import "../styles/globals.css";
 
-const Home = () => {
+const ScientificPage = () => {
   const calculatorSelector = useAppSelector((state) => state.calculator);
   const calculatorDispatch = useAppDispatch();
 
@@ -71,4 +71,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ScientificPage;

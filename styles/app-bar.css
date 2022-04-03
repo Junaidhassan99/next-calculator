@@ -1,0 +1,41 @@
+body {
+  margin: 0px;
+}
+
+.app-bar-parent {
+  padding-left: 10%;
+  padding-right: 12%;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
+
+  color: white;
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-bar-title {
+  font-weight: bold;
+}
+
+.app-bar-items {
+  color: white;
+  text-decoration: none;
+}
+
+.app-bar-actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.app-bar-action-item {
+  padding-left: 2%;
+  padding-right: 2%;
+
+  color: white;
+}

@@ -13,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <Fragment>
         <AppBar />
-        <Component {...pageProps} />
+        <div className="default-margin">
+          <Component {...pageProps} />
+        </div>
       </Fragment>
     </Provider>
   );
