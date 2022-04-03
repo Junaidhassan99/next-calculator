@@ -2,8 +2,6 @@ import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 import { ButtonKeyType, handlerForKeys } from "../store/calculator-slice";
 
-import classes from "../styles/calculator-home-screen.module.css";
-
 import { Fragment } from "react";
 
 const CalclatorButton: React.FC<{
@@ -45,18 +43,15 @@ const CalclatorButton: React.FC<{
       {buttonKey.isVisible ? (
         <button
           key={buttonKey.text}
-          className={`${classes["button-item-padding"]} ${
-            classes["button-item"]
+          className={`button-item-padding button-item
           } ${backgroundColorClassForKeyHold()} default-border dark-component  ${
-            buttonKey.isHeightDouble && classes["double-row-size"]
+            buttonKey.isHeightDouble && "double-row-size"
           }`}
           onClick={buttonClickHandler}
         >
-          <div
-            className={` ${isInv && classes["inv-case-button-item-container"]}`}
-          >
+          <div className={isInv ? "inv-case-button-item-container" : undefined}>
             <div>{removeInv()}</div>
-            {isInv && <div className={classes["inv-case-button-item"]}>-1</div>}
+            {isInv && <div className={"inv-case-button-item"}>-1</div>}
           </div>
         </button>
       ) : null}

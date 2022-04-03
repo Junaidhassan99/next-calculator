@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { handlerForKeys, updateScreenText } from "../store/calculator-slice";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 
-import classes from "../styles/calculator-home-screen.module.css";
+// import classes from "../styles/calculator-home-screen.module.css";
 
 const CalculatorScreen: React.FC<{
   isShiftSelected: boolean;
@@ -76,11 +76,11 @@ const CalculatorScreen: React.FC<{
   }, [calculatorSelector]);
 
   return (
-    <div className={classes["calculator-screen-parent"]} ref={parentRef}>
+    <div className={"calculator-screen-parent"} ref={parentRef}>
       <input
         className={`${
-          isShiftSelected && classes["calculator-screen-shift-h"]
-        } ${classes["calculator-screen"]} default-border dark-component`}
+          isShiftSelected && "calculator-screen-shift-h"
+        } calculator-screen default-border dark-component`}
         type="text"
         value={calculatorSelector}
         ref={screenInputRef}
