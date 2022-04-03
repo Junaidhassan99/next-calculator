@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState } from "react";
 
 interface ActionType {
   title: string;
@@ -25,6 +26,8 @@ const actions: ActionType[] = [
 ];
 
 const AppBar: React.FC<{}> = ({ children }) => {
+  const [currentlySelected, setCurrentlySelected] = useState("/scientific");
+
   return (
     <div className="primary-background-color app-bar-parent">
       <div className="app-bar-title">
@@ -38,7 +41,18 @@ const AppBar: React.FC<{}> = ({ children }) => {
             return (
               <div key={item.path} className="app-bar-action-item">
                 <Link href={item.path}>
-                  <a className="app-bar-items">{item.title}</a>
+                  <a
+                    onClick={() => {
+                      setCurrentlySelected(item.path);
+                    }}
+                    className={`app-bar-items ${
+                      item.path === currentlySelected
+                        ? "app-bar-item-selected"
+                        : "app-bar-item-not-selected"
+                    }`}
+                  >
+                    {item.title}
+                  </a>
                 </Link>
               </div>
             );
