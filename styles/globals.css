@@ -47,10 +47,12 @@ body {
 /*info: if any other button is click button will loose its style so we have to do use this class without focus */
 .dark-component-button-hold,
 .primary-background-color {
-  background-color: #cf6679;
+  /* background-color: #cf6679; */
+  background-color: rgba(237, 73, 73, 0.699);
 }
 
 .dark-component-button-hold:hover {
-  background-color: #d47284;
+  /* background-color: #d47284; */
+  background-color: rgba(255, 97, 97, 0.699);
 }
 

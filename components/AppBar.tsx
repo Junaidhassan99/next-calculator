@@ -29,7 +29,7 @@ const AppBar: React.FC<{}> = ({ children }) => {
   const [currentlySelected, setCurrentlySelected] = useState("/scientific");
 
   return (
-    <div className="primary-background-color app-bar-parent">
+    <div className="app-bar-background-color app-bar-parent">
       <div className="app-bar-title">
         <Link href={"/"}>
           <a className="app-bar-items">Calculator</a>
