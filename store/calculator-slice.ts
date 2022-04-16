@@ -51,8 +51,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.asin(input[0]);
       },
     },
     {
@@ -61,7 +60,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return Math.sin(input[0]);
+        return Math.sinh(input[0]);
       },
     },
     {
@@ -70,8 +69,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.asinh(input[0]);
       },
     },
     {
@@ -90,8 +88,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.asin(input[0]);
       },
     },
     {
@@ -100,7 +97,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 1 / Math.sin(input[0]);
+        return 1 / Math.sinh(input[0]);
       },
     },
 
@@ -110,8 +107,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.asinh(input[0]);
       },
     },
     {
@@ -129,8 +125,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.acos(input[0]);
       },
     },
     {
@@ -139,7 +134,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return Math.cos(input[0]);
+        return Math.cosh(input[0]);
       },
     },
     {
@@ -148,8 +143,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.acosh(input[0]);
       },
     },
     {
@@ -177,8 +171,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.atan(input[0]);
       },
     },
     {
@@ -187,7 +180,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return Math.tan(input[0]);
+        return Math.tanh(input[0]);
       },
     },
 
@@ -197,8 +190,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return Math.atanh(input[0]);
       },
     },
     {
@@ -217,8 +209,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.atan(input[0]);
       },
     },
     {
@@ -227,7 +218,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 1 / Math.tan(input[0]);
+        return 1 / Math.tanh(input[0]);
       },
     },
 
@@ -237,8 +228,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.atanh(input[0]);
       },
     },
     {
@@ -257,8 +247,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.acos(input[0]);
       },
     },
     {
@@ -267,7 +256,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 1 / Math.cos(input[0]);
+        return 1 / Math.cosh(input[0]);
       },
     },
 
@@ -277,8 +266,7 @@ function getButtonKeysOnShift(
       isVisible: true,
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
-        return 0.0;
-        //uk
+        return 1 / Math.acosh(input[0]);
       },
     },
     {
