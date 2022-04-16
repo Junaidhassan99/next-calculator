@@ -26,7 +26,7 @@
   grid-template-rows: repeat(3, 31.5%);
 }
 
-.button-container-grid-middle{
+.button-container-grid-middle {
   grid-template-columns: repeat(4, 24.4%);
   grid-template-rows: repeat(1, 94%);
 }
@@ -109,13 +109,13 @@
   }
 }
 
-/*small small screen */
+/*mobile screen */
 @media only screen and (max-width: 500px) {
   .button-container-grid-top {
     display: none;
   }
 
-  .button-container-grid-middle{
+  .button-container-grid-middle {
     grid-template-columns: repeat(4, 28%);
   }
 
@@ -129,7 +129,7 @@
     display: none;
   }
 
-  .calculator-screen{
+  .calculator-screen {
     width: 105%;
   }
 
