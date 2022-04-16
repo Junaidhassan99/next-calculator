@@ -43,7 +43,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.sin(input[0]);
-        //uk
       },
     },
     {
@@ -63,7 +62,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.sin(input[0]);
-        //uk
       },
     },
     {
@@ -83,7 +81,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.sin(input[0]);
-        //uk
       },
     },
 
@@ -104,7 +101,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.sin(input[0]);
-        //uk
       },
     },
 
@@ -125,7 +121,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.cos(input[0]);
-        //uk
       },
     },
     {
@@ -145,7 +140,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.cos(input[0]);
-        //uk
       },
     },
     {
@@ -165,7 +159,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / input[0];
-        //uk
       },
     },
     {
@@ -175,7 +168,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.tan(input[0]);
-        //uk
       },
     },
 
@@ -196,7 +188,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.tan(input[0]);
-        //uk
       },
     },
 
@@ -217,7 +208,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.tan(input[0]);
-        //uk
       },
     },
 
@@ -238,7 +228,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.tan(input[0]);
-        //uk
       },
     },
 
@@ -259,7 +248,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.cos(input[0]);
-        //uk
       },
     },
 
@@ -280,7 +268,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return 1 / Math.cos(input[0]);
-        //uk
       },
     },
 
@@ -301,7 +288,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.log(input[0]);
-        //uk
       },
     },
     {
@@ -330,7 +316,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.log10(input[0]);
-        //uk
       },
     },
     {
@@ -340,7 +325,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.pow(10, input[0]);
-        //uk
       },
     },
 
@@ -388,7 +372,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.pow(Math.E, input[0]);
-        //uk
       },
     },
 
@@ -399,7 +382,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.abs(input[0]);
-        //uk
       },
     },
 
@@ -410,7 +392,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return Math.sqrt(input[0]);
-        //uk
       },
     },
     {
@@ -440,7 +421,6 @@ function getButtonKeysOnShift(
       buttonKind: ButtonKind.Function,
       calculateResult: (input: number[]) => {
         return factorialize(input[0]);
-        //uk
       },
     },
 
@@ -771,7 +751,6 @@ export const calculatorSlice = createSlice({
           const b = state.screenText.substring(
             state.screenText.indexOf(operator) + 1
           );
-
 
           const mItem = state.buttonKeys.find((item) => item.text === operator);
 
