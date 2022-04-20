@@ -3,33 +3,9 @@ import { Fragment, useEffect, useState } from "react";
 
 import { FaBars } from "react-icons/fa";
 import Drawer from "./Drawer";
-
-interface ActionType {
-  title: string;
-  path: string;
-}
-
-const actions: ActionType[] = [
-  {
-    title: "Scientific",
-    path: "/scientific",
-  },
-  {
-    title: "BMI",
-    path: "/bmi",
-  },
-  {
-    title: "Programmer",
-    path: "/programmer",
-  },
-  {
-    title: "Converter",
-    path: "/converter",
-  },
-];
+import NavItems from "./NavItems";
 
 const AppBar: React.FC<{}> = ({ children }) => {
-  const [currentlySelected, setCurrentlySelected] = useState("/scientific");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   function drawerToggleHandler() {
@@ -37,7 +13,7 @@ const AppBar: React.FC<{}> = ({ children }) => {
   }
 
   return (
-    <Fragment>
+    <div className="app-bar-text-font">
       {isDrawerOpen && <Drawer drawerToggleHandler={drawerToggleHandler} />}
       <div className="app-bar-background-color app-bar-parent">
         <div className="app-bar-title">
@@ -51,33 +27,10 @@ const AppBar: React.FC<{}> = ({ children }) => {
         </div>
 
         <div className="display-nav">
-          <nav>
-            <div className="app-bar-actions-container">
-              {actions.map((item) => {
-                return (
-                  <div key={item.path} className="app-bar-action-item">
-                    <Link href={item.path}>
-                      <a
-                        onClick={() => {
-                          setCurrentlySelected(item.path);
-                        }}
-                        className={`app-bar-items ${
-                          item.path === currentlySelected
-                            ? "app-bar-item-selected"
-                            : "app-bar-item-not-selected"
-                        }`}
-                      >
-                        {item.title}
-                      </a>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </nav>
+          <NavItems classContainer="app-bar-actions-container" />
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import calculatorReducer from "./calculator-slice";
+import routeReducer from "./route-slice";
 
 const store = configureStore({
   reducer: {
     calculator: calculatorReducer,
+    route: routeReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

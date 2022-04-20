@@ -710,6 +710,8 @@ export const calculatorSlice = createSlice({
         !state.buttonKeys[indexToUpdate].isActive;
     },
     handlerForKeys(state, actions: PayloadAction<ButtonKeyType>) {
+      console.log(actions.payload);
+
       function getOperatorKeys() {
         let operators: string[] = [];
 

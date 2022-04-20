@@ -8,12 +8,16 @@ body {
   padding-top: 1.2%;
   padding-bottom: 1.2%;
 
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.app-bar-text-font{
+  font-size: 1.5rem;
 }
 
 .app-bar-title {
