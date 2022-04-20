@@ -3,9 +3,33 @@ import { Fragment, useEffect, useState } from "react";
 
 import { FaBars } from "react-icons/fa";
 import Drawer from "./Drawer";
-import NavItems from "./NavItems";
+
+interface ActionType {
+  title: string;
+  path: string;
+}
+
+const actions: ActionType[] = [
+  {
+    title: "Scientific",
+    path: "/scientific",
+  },
+  {
+    title: "BMI",
+    path: "/bmi",
+  },
+  {
+    title: "Programmer",
+    path: "/programmer",
+  },
+  {
+    title: "Converter",
+    path: "/converter",
+  },
+];
 
 const AppBar: React.FC<{}> = ({ children }) => {
+  const [currentlySelected, setCurrentlySelected] = useState("/scientific");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   function drawerToggleHandler() {
@@ -13,7 +37,7 @@ const AppBar: React.FC<{}> = ({ children }) => {
   }
 
   return (
-    <div className="app-bar-text-font">
+    <Fragment>
       {isDrawerOpen && <Drawer drawerToggleHandler={drawerToggleHandler} />}
       <div className="app-bar-background-color app-bar-parent">
         <div className="app-bar-title">
@@ -27,10 +51,33 @@ const AppBar: React.FC<{}> = ({ children }) => {
         </div>
 
         <div className="display-nav">
-          <NavItems classContainer="app-bar-actions-container" />
+          <nav>
+            <div className="app-bar-actions-container">
+              {actions.map((item) => {
+                return (
+                  <div key={item.path} className="app-bar-action-item">
+                    <Link href={item.path}>
+                      <a
+                        onClick={() => {
+                          setCurrentlySelected(item.path);
+                        }}
+                        className={`app-bar-items ${
+                          item.path === currentlySelected
+                            ? "app-bar-item-selected"
+                            : "app-bar-item-not-selected"
+                        }`}
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </nav>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
