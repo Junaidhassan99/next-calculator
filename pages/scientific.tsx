@@ -3,6 +3,7 @@ import React, { Fragment, useState } from "react";
 import AppBar from "../components/AppBar";
 import CalclatorButton from "../components/CalculatorButton";
 import CalculatorScreen from "../components/CalculatorScreen";
+import Drawer from "../components/Drawer";
 import { setAvalibility } from "../store/calculator-slice";
 
 import { useAppSelector, useAppDispatch } from "../store/hooks";

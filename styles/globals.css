@@ -4,7 +4,7 @@ body .default-margin {
 }
 
 .default-elevation {
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .default-border {

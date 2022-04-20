@@ -46,14 +46,33 @@ body {
 }
 
 .app-bar-background-color {
-  background-color: rgba(255, 0, 0, 0.699);
+  background-color: rgb(177, 25, 25);
 }
 
 .drawer-icon {
   padding-right: 30px;
 }
 
-/*mobile screen */
+.display-drawer {
+  display: none;
+}
+
+.display-nav {
+  /* default value of div */
+  display: block;
+}
+
+@media only screen and (max-width: 700px) {
+  .display-nav {
+    display: none;
+  }
+
+  .display-drawer {
+    /* default value of div */
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .drawer-icon {
     padding-right: 0px;
