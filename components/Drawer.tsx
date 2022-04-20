@@ -1,4 +1,5 @@
 import { FaTimes } from "react-icons/fa";
+import NavItems from "./NavItems";
 
 const Drawer: React.FC<{
   drawerToggleHandler: () => void;
@@ -8,6 +9,11 @@ const Drawer: React.FC<{
       <div onClick={drawerToggleHandler}>
         <FaTimes className="app-bar-item-not-selected cancel-drawer-icon" />
       </div>
+      <NavItems
+        classContainer="drawer-actions-container"
+        classItem="drawer-action-item"
+        onItemClick={drawerToggleHandler}
+      />
     </div>
   );
 };
