@@ -11,6 +11,8 @@ const CalculatorScreen: React.FC<{
     (state) => state.calculator.screenText
   );
 
+  console.log(calculatorSelector);
+
   const buttonKeysSelector = useAppSelector(
     (state) => state.calculator.buttonKeys
   );
@@ -19,6 +21,8 @@ const CalculatorScreen: React.FC<{
 
   const screenInputRef = useRef<HTMLInputElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+
+  console.log(`test 1: ${calculatorSelector}`);
 
   function screenInputKeyHandler(eventKey: any) {
     const allowedKeys = [
