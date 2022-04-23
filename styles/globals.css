@@ -23,13 +23,12 @@ body {
 } */
 
 .dark-component {
-  
   background-color: #3a3c3d;
 
   border-width: 0px;
 }
 
-.dark-component-text-color{
+.dark-component-text-color {
   color: #d8d8d8;
 }
 
@@ -55,4 +54,5 @@ body {
   /* background-color: #d47284; */
   background-color: rgba(255, 97, 97, 0.699);
 }
+
 

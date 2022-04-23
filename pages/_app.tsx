@@ -9,11 +9,13 @@ import "../styles/globals.css";
 import "../styles/app-bar.css";
 import "../styles/calculator-home-screen.css";
 import "../styles/drawer.css";
+import ScreenDuller from "../components/ScreenDuller";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Fragment>
+        <ScreenDuller />
         <AppBar />
 
         <div className="default-margin">
