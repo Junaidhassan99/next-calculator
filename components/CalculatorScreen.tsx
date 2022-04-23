@@ -81,6 +81,7 @@ const CalculatorScreen: React.FC<{
 
   return (
     <div className={"calculator-screen-parent"} ref={parentRef}>
+      <h1 style={{color:'white'}}>{calculatorSelector}</h1>
       <input
         className={`${
           isShiftSelected && "calculator-screen-shift-h"

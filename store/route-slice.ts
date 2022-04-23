@@ -29,12 +29,14 @@ const actions: ActionType[] = [
 // Define a type for the slice state
 type RouteState = {
   currentlySelectedRoute: string;
+  isDrawerOn: boolean;
   actions: ActionType[];
 };
 
 // Define the initial state using that type
 const initialState: RouteState = {
   currentlySelectedRoute: "/scientific",
+  isDrawerOn: false,
   actions: actions,
 };
 
@@ -45,8 +47,11 @@ export const routeSlice = createSlice({
     setRoute: (state, action: PayloadAction<string>) => {
       state.currentlySelectedRoute = action.payload;
     },
+    toogleIsDrawerOn: (state) => {
+      state.isDrawerOn = !state.isDrawerOn;
+    },
   },
 });
 
-export const { setRoute } = routeSlice.actions;
+export const { setRoute, toogleIsDrawerOn } = routeSlice.actions;
 export default routeSlice.reducer;

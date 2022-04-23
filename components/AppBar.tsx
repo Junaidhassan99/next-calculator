@@ -2,19 +2,26 @@ import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 
 import { FaBars } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { toogleIsDrawerOn } from "../store/route-slice";
 import Drawer from "./Drawer";
 import NavItems from "./NavItems";
 
 const AppBar: React.FC<{}> = ({ children }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const IsDrawerOnSelector = useAppSelector((state) => state.route.isDrawerOn);
+  const routeDispatch = useAppDispatch();
 
   function drawerToggleHandler() {
-    setIsDrawerOpen((prevState) => !prevState);
+    // setIsDrawerOpen((prevState) => !prevState);
+    routeDispatch(toogleIsDrawerOn());
   }
 
   return (
     <div className="app-bar-text-font">
-      {isDrawerOpen && <Drawer drawerToggleHandler={drawerToggleHandler} />}
+      {IsDrawerOnSelector && (
+        <Drawer drawerToggleHandler={drawerToggleHandler} />
+      )}
       <div className="app-bar-background-color app-bar-parent">
         <div className="app-bar-title">
           <Link href={"/"}>
