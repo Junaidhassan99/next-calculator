@@ -11,8 +11,6 @@ const CalculatorScreen: React.FC<{
     (state) => state.calculator.screenText
   );
 
-  console.log(calculatorSelector);
-
   const buttonKeysSelector = useAppSelector(
     (state) => state.calculator.buttonKeys
   );
@@ -21,8 +19,6 @@ const CalculatorScreen: React.FC<{
 
   const screenInputRef = useRef<HTMLInputElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
-
-  console.log(`test 1: ${calculatorSelector}`);
 
   function screenInputKeyHandler(eventKey: any) {
     const allowedKeys = [
@@ -81,15 +77,18 @@ const CalculatorScreen: React.FC<{
 
   return (
     <div className={"calculator-screen-parent"} ref={parentRef}>
-      <h1 style={{color:'white'}}>{calculatorSelector}</h1>
+      {/* <h1 style={{ color: "white" }}>{calculatorSelector}</h1> */}
       <input
         className={`${
           isShiftSelected && "calculator-screen-shift-h"
         } calculator-screen default-border dark-component-text-color dark-component`}
         type="text"
-        defaultValue={calculatorSelector}
+        value={calculatorSelector}
         ref={screenInputRef}
         onKeyDown={screenInputKeyHandler}
+        onChange={(event) => {
+          //do nothing
+        }}
       ></input>
     </div>
   );
