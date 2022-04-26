@@ -95,22 +95,29 @@
   width: 102.3%;
 }
 
-/* medium screen */
-@media only screen and (max-width: 1200px) {
+/* large screen >1200 */
+@media only screen and (min-width: 1200px) {
+  .button-item-padding {
+    padding: 3px;
+  }
+}
+
+/* medium screen 600-1200 */
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
   .button-item-padding {
     padding: 2px;
   }
 }
 
-/* small screen */
-@media only screen and (max-width: 600px) {
+/* small screen 500-600 */
+@media only screen and (min-width: 500px) and (max-width: 600px) {
   .button-item-padding {
     padding: 1px;
   }
 }
 
-/*mobile screen */
-@media only screen and (max-width: 500px) {
+/*mobile screen 0-500 */
+@media only screen and (min-width: 0px) and (max-width: 500px) {
   .button-container-grid-top {
     display: none;
   }
