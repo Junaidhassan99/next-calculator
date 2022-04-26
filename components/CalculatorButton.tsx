@@ -4,6 +4,8 @@ import { ButtonKeyType, handlerForKeys } from "../store/calculator-slice";
 
 import { Fragment } from "react";
 
+import { FaBackspace } from "react-icons/fa";
+
 const CalclatorButton: React.FC<{
   buttonKey: ButtonKeyType;
 }> = ({ children, buttonKey }) => {
@@ -12,6 +14,14 @@ const CalclatorButton: React.FC<{
   const keyHoldCheck = useAppSelector((state) => state.calculator);
 
   const isInv = buttonKey.text.endsWith("-1");
+
+  const buttonIcons: { [key: string]: JSX.Element } = {
+    backspace: <FaBackspace />,
+  };
+
+  if (buttonKey.text === "backspace") {
+    console.log(`test 3: ${buttonIcons[buttonKey.text]}`);
+  }
 
   function removeInv() {
     if (isInv) {
@@ -36,7 +46,6 @@ const CalclatorButton: React.FC<{
     }
   }
 
-
   return (
     <Fragment>
       {buttonKey.isVisible ? (
@@ -49,7 +58,11 @@ const CalclatorButton: React.FC<{
           onClick={buttonClickHandler}
         >
           <div className={isInv ? "inv-case-button-item-container" : undefined}>
-            <div>{removeInv()}</div>
+            {buttonIcons[buttonKey.text] !== undefined ? (
+              <div>{buttonIcons[buttonKey.text]}</div>
+            ) : (
+              <div>{removeInv()}</div>
+            )}
             {isInv && <div className={"inv-case-button-item"}>-1</div>}
           </div>
         </button>
