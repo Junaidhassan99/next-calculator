@@ -19,10 +19,6 @@ const CalclatorButton: React.FC<{
     backspace: <FaBackspace />,
   };
 
-  if (buttonKey.text === "backspace") {
-    console.log(`test 3: ${buttonIcons[buttonKey.text]}`);
-  }
-
   function removeInv() {
     if (isInv) {
       return buttonKey.text.substring(0, buttonKey.text.length - "-1".length);

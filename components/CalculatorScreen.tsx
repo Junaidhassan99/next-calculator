@@ -3,6 +3,8 @@ import { handlerForKeys, updateScreenText } from "../store/calculator-slice";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 import InputScreen from "./InputScreen";
 
+import { isMobile } from "react-device-detect";
+
 // import classes from "../styles/calculator-home-screen.module.css";
 
 const mAllowedKeys = [
@@ -42,8 +44,6 @@ const CalculatorScreen: React.FC<{
   const parentRef = useRef<HTMLDivElement>(null);
 
   function mOnKeyDown(keyValue: string) {
-    console.log(`test 2: ${keyValue}`);
-
     function getButtonKeyForText(keyText: string) {
       return buttonKeysSelector.find((x) => x.text === keyText)!;
     }
@@ -58,8 +58,10 @@ const CalculatorScreen: React.FC<{
   }
 
   useEffect(() => {
-    //automatically focus input field when input changes
-    screenInputRef.current?.focus();
+    if (!isMobile) {
+      //automatically focus input field when input changes
+      screenInputRef.current?.focus();
+    }
 
     //scroll to the end of input field when input changes
     const fontSizeOfInputScreen = +getComputedStyle(
