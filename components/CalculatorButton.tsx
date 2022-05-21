@@ -2,7 +2,7 @@ import { useAppSelector, useAppDispatch } from "../store/hooks";
 
 import { ButtonKeyType, handlerForKeys } from "../store/calculator-slice";
 
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { FaBackspace } from "react-icons/fa";
 
@@ -67,4 +67,4 @@ const CalclatorButton: React.FC<{
   );
 };
 
-export default CalclatorButton;
+export default React.memo( CalclatorButton);

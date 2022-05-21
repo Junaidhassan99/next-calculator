@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import { FaBars } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -41,4 +41,4 @@ const AppBar: React.FC<{}> = ({ children }) => {
   );
 };
 
-export default AppBar;
+export default React.memo(AppBar);

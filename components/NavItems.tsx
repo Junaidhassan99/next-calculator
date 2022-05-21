@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setRoute } from "../store/route-slice";
 
@@ -43,4 +43,4 @@ const NavItems: React.FC<{
   );
 };
 
-export default NavItems;
+export default React.memo( NavItems);

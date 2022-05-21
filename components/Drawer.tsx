@@ -1,3 +1,4 @@
+import React from "react";
 import { FaTimes } from "react-icons/fa";
 import NavItems from "./NavItems";
 
@@ -18,4 +19,4 @@ const Drawer: React.FC<{
   );
 };
 
-export default Drawer;
+export default React.memo(Drawer);

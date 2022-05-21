@@ -1,3 +1,4 @@
+import React from "react";
 import { useAppSelector } from "../store/hooks";
 
 const ScreenDuller = () => {
@@ -12,4 +13,4 @@ const ScreenDuller = () => {
   );
 };
 
-export default ScreenDuller;
+export default React.memo(ScreenDuller);
