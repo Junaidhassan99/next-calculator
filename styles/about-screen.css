@@ -19,3 +19,10 @@
 .about-item-spacer {
   width: 10px;
 }
+
+/* screen <500 */
+@media only screen and (max-width: 500px) {
+  .about-text-item {
+    font-size: 0.8rem;
+  }
+}
