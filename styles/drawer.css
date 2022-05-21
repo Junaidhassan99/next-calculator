@@ -27,16 +27,41 @@
   padding-bottom: 3%;
 }
 
+@keyframes screen-duller-animation {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.422);
+  }
+}
+
 .screen-duller {
-  background-color: rgba(0, 0, 0, 0.422);
   height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.422);
+  animation-name: screen-duller-animation;
+  animation-duration: 300ms;
+}
+
+@keyframes screen-duller-remove-animation {
+  from {
+    background-color: rgba(0, 0, 0, 0.422);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 
 .screen-duller-remove {
   display: none;
+
+  background-color: rgba(0, 0, 0, 0);
+  animation-name: screen-duller-remove-animation;
+  animation-duration: 300ms;
 }
 
 @media only screen and (max-width: 700px) {
