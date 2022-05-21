@@ -20,7 +20,7 @@ const ScientificPage = () => {
       <Head>
         <title>Calculator</title>
       </Head>
-      <div style={{color: "red"}}>ULTRRPPPP</div>
+
       <div className={"calculator-page-body calculator-page-container"}>
         <div className="default-elevation">
           <CalculatorScreen
