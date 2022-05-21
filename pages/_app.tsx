@@ -9,6 +9,8 @@ import "../styles/globals.css";
 import "../styles/app-bar.css";
 import "../styles/calculator-home-screen.css";
 import "../styles/drawer.css";
+import '../styles/about-screen.css'
+
 import ScreenDuller from "../components/ScreenDuller";
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -10,6 +10,7 @@ const InputScreen: React.FC<{
   inputValue?: string;
   allowedKeys?: string[];
   onKeyDown?: (keyValue: string) => void;
+  inputType?: string;
 }> = ({
   children,
   additionalClasses,
@@ -17,6 +18,7 @@ const InputScreen: React.FC<{
   inputValue,
   allowedKeys,
   onKeyDown,
+  inputType = "text",
 }) => {
   function screenInputKeyHandler(eventKey: any) {
     eventKey.preventDefault();
@@ -27,8 +29,6 @@ const InputScreen: React.FC<{
       screen.width >= 500 &&
       allowedKeys.includes(eventKey.key)
     ) {
-      console.log(`test 1: ${eventKey.key}`);
-
       onKeyDown(eventKey.key);
     }
   }
@@ -36,7 +36,7 @@ const InputScreen: React.FC<{
   return (
     <input
       className={`${additionalClasses} calculator-screen default-border dark-component-text-color dark-component`}
-      type="text"
+      type={inputType}
       value={inputValue}
       ref={inputRef}
       onKeyDown={screenInputKeyHandler}

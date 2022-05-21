@@ -13,16 +13,8 @@ const actions: ActionType[] = [
     path: "/scientific",
   },
   {
-    title: "BMI",
-    path: "/bmi",
-  },
-  {
-    title: "Programmer",
-    path: "/programmer",
-  },
-  {
-    title: "Converter",
-    path: "/converter",
+    title: "About",
+    path: "/about",
   },
 ];
 
